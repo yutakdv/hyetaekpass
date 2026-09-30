@@ -1,0 +1,33 @@
+# Local files
+.DS_Store
+*.log
+.idea/
+*.iml
+
+# Secrets and signing material
+.env
+.env.*
+!.env.example
+!.env.*.example
+.aws/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+
+# Generated dependencies and build output
+node_modules/
+.expo/
+.venv/
+__pycache__/
+*.py[cod]
+.gradle/
+**/build/
+dist/
+coverage/
+Pods/
+local.properties
+.xcode.env.local
