@@ -6,7 +6,7 @@
 
 앱에서 지갑 수단을 등록하고 **내 조건 작성 → 이 매장에서 확인 → 조건 확인 → 예상 결과 → 멤버십 코드 보기**로 사용할 수 있습니다. 확인되지 않은 후보가 있으면 전체 최대 할인은 확정하지 않습니다. QR·CODE128·EAN13은 사용자가 멤버십용 정적 코드임을 확인한 값만 단말에서 생성·보관합니다. 동적 코드·잔여 포인트·카드번호·결제용 QR은 지원하지 않으며 공식 앱을 사용합니다. 지갑·코드·금액·위치는 제보에 자동 첨부하지 않습니다.
 
-[서비스 상세 기획](docs/service-experience-spec.md), [화면 설계](docs/service-ui-design.md), [0.2.0 실제 검증 결과](docs/service-verification.md)에 세부 동작과 확인 범위가 있습니다. [결제 전 결과](docs/verification-evidence/service/checkout-result-390.png)와 [멤버십 QR](docs/verification-evidence/service/membership-qr-390.png)은 비개인 시험 입력 화면입니다.
+[서비스 상세 기획](docs/service-experience-spec.md), [화면 설계](docs/service-ui-design.md), [0.2.0 실제 검증 결과](docs/service-verification.md)에 세부 동작과 확인 범위가 있습니다. 이후 Pinterest·Dribbble을 참고해 홈·탐색·지갑·결과·코드와 관리 화면을 리디자인했습니다. 최신 [디자인·실제 검증](docs/redesign-2026-09-30.md), [지갑](docs/verification-evidence/redesign/wallet-390.jpg), [결제 전 결과](docs/verification-evidence/redesign/result-390.jpg), [멤버십 QR](docs/verification-evidence/redesign/code-390.jpg)은 비개인 시험 입력을 사용합니다.
 
 ## 구조와 확인한 환경
 

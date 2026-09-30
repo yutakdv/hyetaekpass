@@ -210,3 +210,16 @@ xcodebuild -workspace FE/mobile/ios/app.xcworkspace -scheme app -configuration D
 독립 코드 리뷰의 필수 발견을 수정했다: 실패 후 신선도/NaN 시각/시계 이동/호환 실패 차단 보존, opaque 제보 토큰 JWT 오인, 철회 중 비동기 알림, 제보 영수증 저장 실패와 오프라인 전체삭제, backup marker, 지갑 변경 뒤 자격 재확인. 회귀 42개와 실제 HTTP/복구를 통과했다. 리뷰는 AI 코드 검토이며 실제 사람 원문 검수·운영 MFA·물리 기기 결과가 아니다.
 
 코드 그래프를 최종 소스로 재색인했다(1275 nodes/2900 edges); 기존 잘못된 파일 매핑 이후 `syncCatalog`의 `packages/benefit-core/src/sync.ts` 경로를 MCP 검색에서 재확인했다.
+
+## 2026-09-30 서비스 리디자인 추가 검증
+
+사용자의 Pinterest 등 디자인 사이트 참고 요청에 따라 홈·탐색·지갑·결과·멤버십 코드·관리 화면을 리디자인했다. 모델·계산 엔진·계약·의존성은 유지하며 최신 설계/실제 캡처/범위는 [리디자인 검증](redesign-2026-09-30.md)을 기준으로 한다.
+
+| 증거 | 실제 확인 |
+|---|---|
+| REDESIGN-CHECK | 최종 typecheck·67/67 Node 회귀·validation web export·관리 Vite build exit 0. 로그 `/private/tmp/hyetaekpass-redesign-{node,web,admin}.log` |
+| REDESIGN-UI | 320×740 / 390×844 홈·지갑·결과·QR overflow 없음, 1024×900 앱 가운데 표시. 등록→직접 조건→UNKNOWN→확인된 1,000원 즉시/11,000원 결제/0원 청구→해당 QR, 수정 취소/삭제 확인 취소·재실행 보존 확인. 관리 390×844 / 1440×1000 실제 0개/OFF/refresh |
+| REDESIGN-UX | 단계 간 잔류 스크롤·코드 저장 뒤 제목 잘림 수정, 실제 scrollTop 0/back top 20px. Tab 포커스·radio checked/tab selected/disclosure expanded를 브라우저 AX/DOM에서 확인. AI 독립 캡처/소스 검토 필수 발견 없음 |
+| REDESIGN-NATIVE | 22:43 KST 최신 aria-* 수정까지 포함한 양 OS production compile exit 0. source 32개 SHA 전후 동일. [실제 source·bundle·권한·서명 증거](verification-evidence/redesign/native-build.json). iOS unsigned, Android debug 서명 내부 AAB, HTTPS placeholder. native GUI/실물/운영/스토어 미수행 |
+
+공개 카탈로그 0개·위치 OFF와 외부 게이트는 유지한다. 이번 scope의 BE·AI·복구·AWS 소스 변경은 없으며 이전 검사 결과를 새 실행으로 표시하지 않는다.

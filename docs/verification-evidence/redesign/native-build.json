@@ -1,0 +1,276 @@
+{
+  "sourceSHA256Before": {
+    "FE/mobile/App.tsx": "634ce9f6b380af5ea1f7a5ee2ba57779a020fbd397792548df65e2d50eeefa06",
+    "FE/mobile/app.config.ts": "d1b7d52517482df7bf67fa6711b1d0d95e10e861950d97b8aeb7146ee0a8b677",
+    "FE/mobile/index.ts": "6d4f6f08a0c55d715761531244d207db8f5939eef4d9f5ea5b767b60c966977b",
+    "FE/mobile/package.json": "353edb52f563d0fc7b0efdca9caf27825af5541b3b2b32a8a8adbc81c198539b",
+    "FE/mobile/src/MembershipCode.tsx": "c3399f99dda323322acd82a17a1550af0860dd08d1ccc0f461a9039b9ba22026",
+    "FE/mobile/src/ServiceUI.tsx": "a031281c6900039c9ea8bc60b663e4fe935c5d0658bd89d2f0818305bad9e79b",
+    "FE/mobile/src/membership.ts": "6f6acf201cb67bc7cd7e465d624ee6447c957cb7fc5ffcc11fa054084a7863f5",
+    "FE/mobile/src/model.ts": "24ee676d1d2ac52e2dd49f5331bcecb736b380537783bcbd91c0faf046db8942",
+    "FE/mobile/src/native.ts": "f8d94241671fca6bb44df6de19dd58dcb4e0ac62ef43bd9a80da70c13f6714d0",
+    "FE/mobile/src/protected.ts": "51a9e502385cd02531085431b1bb7469ab98f607c847c9cf06f483e993408998",
+    "FE/mobile/src/runtime-safety.ts": "fc5bf245e54a1373ae6da52294b171656a37fd89bc0ca6069aca628ebc5053f5",
+    "FE/mobile/src/service.ts": "1381d8d486300756520792a833a1b4186e1021aaa8331c6ab7ead1eb0841143d",
+    "FE/mobile/src/serviceTypes.ts": "4267680b79549011e20b01a9b59216b0b531ebfd12f3ea2a14442c6657933f25",
+    "FE/mobile/src/theme.ts": "f96c8ceb5ff44e58bc8900e0cbe20c6f813748bb67462e6cdbf625ccae014ded",
+    "FE/mobile/test/controller.test.ts": "fd194b01159cd635b52bbf7dcd206b0f03c42e8c1828907c08510efdef7b0264",
+    "FE/mobile/test/local.test.ts": "eae489a8a432ef6bbe534ffeed1da87325431949b3ae5a8d30231ccbada5b6f6",
+    "FE/mobile/test/membership.test.ts": "6450cc35fb96aa61b0a8af8e84b1b9ad523baa5dd341c6a5ae2500d6376172e5",
+    "FE/mobile/test/review-regressions.test.ts": "8c6ef87096678be18ea850bd442ee1f87ecd0ba9a05d2beacf46afeda6e055ea",
+    "FE/mobile/test/service.test.ts": "0b8d97c6ab09c8f48790e24f7a617a0c219e58ec526b55a31b625724d8f2232b",
+    "contracts/types.ts": "b7b6dce9fa2b7402a26a1cd6c8f06172683af1da2fa9381e38b032eb04edd2e9",
+    "package-lock.json": "641ab91094141488c5788f6421470319d062c99e5370dc849679d377f0a961e5",
+    "packages/benefit-core/package.json": "6e3194f5057396e6bf0783f53b75956d6f5984980e29af3c5225fe41e0ba43a0",
+    "packages/benefit-core/src/calculate.ts": "be95e1fc2f908dc259eda2ee490a9f624544231ac1340688d046b1570f164a35",
+    "packages/benefit-core/src/catalog.ts": "9591efd9249638782bbcce5e6f4bd45a18a5b96c8ef02f830dcc5710acc559d1",
+    "packages/benefit-core/src/index.ts": "dec1fc34f729b608419b1f547714413d4ef88a0a0e389fda792bdab079349646",
+    "packages/benefit-core/src/location.ts": "032760a68f78737c5c132256c92499df9ce3fbe78f434b5bb51fcf0a4c145f2f",
+    "packages/benefit-core/src/sync.ts": "692749fc61beb666706aa96c76531d9882bec4fb4dedceed738d72ab29358cc3",
+    "packages/benefit-core/test/calculate.test.ts": "0ac00bb21ff7e520e8009b10986ebe2540221a399cf195780ea5bcba2b65a46a",
+    "packages/benefit-core/test/fixtures.ts": "55c8badd70e7be1df598930ba3548816cced1df63ee0a42a0801cc35d0c79ca5",
+    "packages/benefit-core/test/location.test.ts": "5398cf29073bc6e820da7d0f9cf0562d19cf601512b76f01894f76c9a928bc64",
+    "packages/benefit-core/test/safety.test.ts": "8d779683d56266a1a49ffe2ed4f92ad203f6271bd3ab7ba82f6aff941b13eb7a",
+    "packages/benefit-core/tsconfig.json": "520da54ba9f82e9f7a96cd77cf045c3a73d7deffd842f29c610dd88fb660f019"
+  },
+  "verifiedAt": "2026-09-30T22:43:18.974273+09:00",
+  "sourceSHA256After": {
+    "FE/mobile/App.tsx": "634ce9f6b380af5ea1f7a5ee2ba57779a020fbd397792548df65e2d50eeefa06",
+    "FE/mobile/app.config.ts": "d1b7d52517482df7bf67fa6711b1d0d95e10e861950d97b8aeb7146ee0a8b677",
+    "FE/mobile/index.ts": "6d4f6f08a0c55d715761531244d207db8f5939eef4d9f5ea5b767b60c966977b",
+    "FE/mobile/package.json": "353edb52f563d0fc7b0efdca9caf27825af5541b3b2b32a8a8adbc81c198539b",
+    "FE/mobile/src/MembershipCode.tsx": "c3399f99dda323322acd82a17a1550af0860dd08d1ccc0f461a9039b9ba22026",
+    "FE/mobile/src/ServiceUI.tsx": "a031281c6900039c9ea8bc60b663e4fe935c5d0658bd89d2f0818305bad9e79b",
+    "FE/mobile/src/membership.ts": "6f6acf201cb67bc7cd7e465d624ee6447c957cb7fc5ffcc11fa054084a7863f5",
+    "FE/mobile/src/model.ts": "24ee676d1d2ac52e2dd49f5331bcecb736b380537783bcbd91c0faf046db8942",
+    "FE/mobile/src/native.ts": "f8d94241671fca6bb44df6de19dd58dcb4e0ac62ef43bd9a80da70c13f6714d0",
+    "FE/mobile/src/protected.ts": "51a9e502385cd02531085431b1bb7469ab98f607c847c9cf06f483e993408998",
+    "FE/mobile/src/runtime-safety.ts": "fc5bf245e54a1373ae6da52294b171656a37fd89bc0ca6069aca628ebc5053f5",
+    "FE/mobile/src/service.ts": "1381d8d486300756520792a833a1b4186e1021aaa8331c6ab7ead1eb0841143d",
+    "FE/mobile/src/serviceTypes.ts": "4267680b79549011e20b01a9b59216b0b531ebfd12f3ea2a14442c6657933f25",
+    "FE/mobile/src/theme.ts": "f96c8ceb5ff44e58bc8900e0cbe20c6f813748bb67462e6cdbf625ccae014ded",
+    "FE/mobile/test/controller.test.ts": "fd194b01159cd635b52bbf7dcd206b0f03c42e8c1828907c08510efdef7b0264",
+    "FE/mobile/test/local.test.ts": "eae489a8a432ef6bbe534ffeed1da87325431949b3ae5a8d30231ccbada5b6f6",
+    "FE/mobile/test/membership.test.ts": "6450cc35fb96aa61b0a8af8e84b1b9ad523baa5dd341c6a5ae2500d6376172e5",
+    "FE/mobile/test/review-regressions.test.ts": "8c6ef87096678be18ea850bd442ee1f87ecd0ba9a05d2beacf46afeda6e055ea",
+    "FE/mobile/test/service.test.ts": "0b8d97c6ab09c8f48790e24f7a617a0c219e58ec526b55a31b625724d8f2232b",
+    "contracts/types.ts": "b7b6dce9fa2b7402a26a1cd6c8f06172683af1da2fa9381e38b032eb04edd2e9",
+    "package-lock.json": "641ab91094141488c5788f6421470319d062c99e5370dc849679d377f0a961e5",
+    "packages/benefit-core/package.json": "6e3194f5057396e6bf0783f53b75956d6f5984980e29af3c5225fe41e0ba43a0",
+    "packages/benefit-core/src/calculate.ts": "be95e1fc2f908dc259eda2ee490a9f624544231ac1340688d046b1570f164a35",
+    "packages/benefit-core/src/catalog.ts": "9591efd9249638782bbcce5e6f4bd45a18a5b96c8ef02f830dcc5710acc559d1",
+    "packages/benefit-core/src/index.ts": "dec1fc34f729b608419b1f547714413d4ef88a0a0e389fda792bdab079349646",
+    "packages/benefit-core/src/location.ts": "032760a68f78737c5c132256c92499df9ce3fbe78f434b5bb51fcf0a4c145f2f",
+    "packages/benefit-core/src/sync.ts": "692749fc61beb666706aa96c76531d9882bec4fb4dedceed738d72ab29358cc3",
+    "packages/benefit-core/test/calculate.test.ts": "0ac00bb21ff7e520e8009b10986ebe2540221a399cf195780ea5bcba2b65a46a",
+    "packages/benefit-core/test/fixtures.ts": "55c8badd70e7be1df598930ba3548816cced1df63ee0a42a0801cc35d0c79ca5",
+    "packages/benefit-core/test/location.test.ts": "5398cf29073bc6e820da7d0f9cf0562d19cf601512b76f01894f76c9a928bc64",
+    "packages/benefit-core/test/safety.test.ts": "8d779683d56266a1a49ffe2ed4f92ad203f6271bd3ab7ba82f6aff941b13eb7a",
+    "packages/benefit-core/tsconfig.json": "520da54ba9f82e9f7a96cd77cf045c3a73d7deffd842f29c610dd88fb660f019"
+  },
+  "sourceUnchangedDuringBuild": true,
+  "artifactCopiesMatch": true,
+  "toolchain": {
+    "Xcode": "27.0 build 27A266a",
+    "AndroidJava": "Temurin 21.0.11+10-LTS",
+    "AndroidSDK": "37",
+    "AndroidGradle": "9.3.1"
+  },
+  "iOS": {
+    "path": "/Users/yutak/Desktop/SubProject/.local-tools/artifacts/hyetaekpass-redesign-production-unsigned.app",
+    "exitCode": 0,
+    "log": "/private/tmp/hyetaekpass-redesign-ios-production.log",
+    "version": "0.2.0",
+    "bundleID": "com.hyetaekpass.app",
+    "supportedPlatforms": [
+      "iPhoneOS"
+    ],
+    "minimumOSVersion": "16.4",
+    "unsignedConfirmed": true,
+    "NSAppTransportSecurity": {
+      "NSAllowsArbitraryLoads": false
+    },
+    "locationWhenInUse": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+    "AlwaysLocationKeys": [],
+    "Motion": null,
+    "FaceID": null,
+    "backgroundModes": [
+      "fetch"
+    ],
+    "privacy": {
+      "NSPrivacyAccessedAPITypes": [
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "C617.1"
+          ]
+        },
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "CA92.1"
+          ]
+        },
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "35F9.1"
+          ]
+        }
+      ],
+      "NSPrivacyCollectedDataTypes": [],
+      "NSPrivacyTracking": false
+    },
+    "productionPlugins": [
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "motionUsagePermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#086653"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": false
+          }
+        }
+      ]
+    ],
+    "bundleFileBytes": 34364530,
+    "bundleTreeSHA256": "160ce4f0dd58452714105a5aff1e20c9f50dca71a29ae47899e6236b9a3a62e0",
+    "treeHashMethod": "SHA-256 of sorted JSON [relative path, file|symlink, file content SHA-256|link target]",
+    "jsBytes": 4961887,
+    "jsSHA256": "de50d81dd74b4cab8b56aed630ab0f04a12307f8ac781ff2604df0854ea9cc2e",
+    "httpsPlaceholderInJS": true,
+    "fontAssets": [
+      "assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf"
+    ],
+    "fontSHA256": "fa2ab7d2557819b2bfe5009e46844efa7170cf177be7735d43aa2ac1295f1d54"
+  },
+  "Android": {
+    "path": "/Users/yutak/Desktop/SubProject/.local-tools/artifacts/hyetaekpass-redesign-production-internal.aab",
+    "exitCode": 0,
+    "log": "/private/tmp/hyetaekpass-redesign-android-production.log",
+    "version": "0.2.0",
+    "package": "com.hyetaekpass.app",
+    "usesSdk": {
+      "{http://schemas.android.com/apk/res/android}minSdkVersion": "24",
+      "{http://schemas.android.com/apk/res/android}targetSdkVersion": "36"
+    },
+    "signingCertificate": "CN=Android Debug",
+    "cleartext": "false",
+    "allowBackup": "true",
+    "dataExtractionRules": "@xml/secure_store_data_extraction_rules",
+    "fullBackupContent": "@xml/secure_store_backup_rules",
+    "permissions": [
+      "android.permission.ACCESS_COARSE_LOCATION",
+      "android.permission.ACCESS_FINE_LOCATION",
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.INTERNET",
+      "android.permission.POST_NOTIFICATIONS",
+      "android.permission.READ_APP_BADGE",
+      "android.permission.RECEIVE_BOOT_COMPLETED",
+      "android.permission.USE_BIOMETRIC",
+      "android.permission.USE_FINGERPRINT",
+      "android.permission.VIBRATE",
+      "android.permission.WAKE_LOCK",
+      "com.anddoes.launcher.permission.UPDATE_COUNT",
+      "com.google.android.c2dm.permission.RECEIVE",
+      "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
+      "com.htc.launcher.permission.READ_SETTINGS",
+      "com.htc.launcher.permission.UPDATE_SHORTCUT",
+      "com.huawei.android.launcher.permission.CHANGE_BADGE",
+      "com.huawei.android.launcher.permission.READ_SETTINGS",
+      "com.huawei.android.launcher.permission.WRITE_SETTINGS",
+      "com.hyetaekpass.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+      "com.majeur.launcher.permission.UPDATE_BADGE",
+      "com.oppo.launcher.permission.READ_SETTINGS",
+      "com.oppo.launcher.permission.WRITE_SETTINGS",
+      "com.sec.android.provider.badge.permission.READ",
+      "com.sec.android.provider.badge.permission.WRITE",
+      "com.sonyericsson.home.permission.BROADCAST_BADGE",
+      "com.sonymobile.home.permission.PROVIDER_INSERT_BADGE",
+      "me.everything.badger.permission.BADGE_COUNT_READ",
+      "me.everything.badger.permission.BADGE_COUNT_WRITE"
+    ],
+    "productionPlugins": [
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "motionUsagePermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#086653"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": false
+          }
+        }
+      ]
+    ],
+    "aabBytes": 22649276,
+    "aabSHA256": "87b2bf9f707c4af6b31245ebd4ceb6eb778feb93414217c0b8e4639c037345d3",
+    "jsBytes": 3900540,
+    "jsSHA256": "b89a4eb897190a383dde45bbea46ad884fd8cbb35593adc2066ab26117d57977",
+    "httpsPlaceholderInJS": true,
+    "fontAssets": [
+      "base/res/raw/__node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_ionicons.ttf"
+    ],
+    "fontSHA256": "fa2ab7d2557819b2bfe5009e46844efa7170cf177be7735d43aa2ac1295f1d54",
+    "buildDuration": "26s"
+  },
+  "commands": {
+    "iOS": "env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production xcodebuild -workspace FE/mobile/ios/app.xcworkspace -scheme app -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath .local-tools/ios-production-derived CODE_SIGNING_ALLOWED=NO build > /private/tmp/hyetaekpass-redesign-ios-production.log 2>&1",
+    "iOSCwd": "/Users/yutak/Desktop/SubProject",
+    "Android": "env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production ANDROID_HOME=/Users/yutak/Desktop/SubProject/.local-tools/android-sdk JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home GRADLE_USER_HOME=/Users/yutak/Desktop/SubProject/.local-tools/gradle-mobile ./gradlew :app:bundleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a > /private/tmp/hyetaekpass-redesign-android-production.log 2>&1",
+    "AndroidCwd": "/Users/yutak/Desktop/SubProject/FE/mobile/android"
+  },
+  "notPerformed": [
+    "Native GUI tasks",
+    "Physical device installation",
+    "POS barcode/QR scan",
+    "Production API connection",
+    "Production signing",
+    "Store submission"
+  ],
+  "finalSourceConfirmed": true,
+  "sourceScope": "Final frozen redesign source including ServiceUI scroll reset and aria-checked, aria-selected, aria-expanded accessibility properties; source SHA unchanged before/after both native builds"
+}
