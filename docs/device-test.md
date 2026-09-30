@@ -276,3 +276,9 @@ iPhone 탐색은 양성 20회·음성 40회부터, 공개 후보는 플랫폼별
 현장 시험 요청 전 빌드·설치 절차·정확한 endpoint 설정·자료 상태·동의/보존·지원 담당을 준비한다. 사용자에게 필요한 입력은 기기 모델/OS와 시험 가능 시간, Android 확보 방식, 설치/서명 권한, 실제 검수자·시험 참여 준비로 묶는다. 이 문서 자체가 기기 설치·현장 시험 또는 공개 배포 승인을 의미하지 않는다.
 
 2026-09-30 18:35 KST Android 에뮬레이터 실제 설치: `adb -s emulator-5554 install .local-tools/artifacts/hyetaekpass-validation.apk` → Success, `adb -s emulator-5554 shell am start -n com.hyetaekpass.app/.MainActivity` → 시작 성공, `adb shell pidof com.hyetaekpass.app` → 프로세스 유지. ReactNativeJS/AndroidRuntime logcat 오류 없음. headless 실행·설치 증거이며 UI·실기기 과업 통과가 아니다.
+
+## 쓸때 0.3.0 브랜드·제공사 안내 추가 빌드
+
+2026-09-30 23:47 KST, [최신 실제 소스·산출물·명령 증거](verification-evidence/sseulttae-provider/native-build.json). Production prebuild/pods·iOS generic `iphoneos` unsigned Release·Android arm64 bundleRelease exit0. source/config/deps28+선정brand12 입력 SHA 전후 동일. compiled 쓸때/0.3.0, iOS 최소16.4/ATS arbitrary loads false/opaque AppIcon, Android min24/target36/cleartext false/adaptive·알림 아이콘 확인. 최종 iOS 산출물의 이전 미참조 브랜드 파일은 출력 재조립 빌드로 제거했고 예전 저장 산출물은 보존했다.
+
+산출물은 `.local-tools/artifacts/sseulttae-production-unsigned.app`와 `.local-tools/artifacts/sseulttae-production-internal.aab`에 있다. iOS unsigned·Android debug 내부 서명이며 `https://api.hyetaekpass.invalid`는 구성 확인 placeholder다. 실제 네이티브 화면 과업/단말 설치·공식 앱 로그인 뒤 코드 도착·POS 스캔·운영 서명·스토어·API 자동 연결은 이번 결과에 포함하지 않는다. [웹 과업·브랜드·공식 연동 조사](sseulttae-provider-implementation.md)의 확인 범위와 구별한다.

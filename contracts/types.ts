@@ -46,7 +46,7 @@ export interface RuleResult { ruleId: string; eligibility: Truth; reasons: strin
 export interface Plan { ruleIds: string[]; instantWon: number; payableWon: number; billingWon: number; totalWon: number }
 export interface CalculationResult { results: RuleResult[]; plans: Plan[]; best: Plan | null; label: 'CONDITION_BASED_ESTIMATE' }
 export interface CacheState { catalog: Catalog | null; safety: Safety | null }
-export interface WalletItem { id: string; name: string; kind: 'CARD' | 'MEMBERSHIP'; tier: string; productVersion: string | null }
+export interface WalletItem { id: string; name: string; kind: 'CARD' | 'MEMBERSHIP'; tier: string; productVersion: string | null; /** Local provider reference; never a verified product or benefit identity. */ providerId?: string }
 export interface LocationObservation { latitude: number; longitude: number; accuracy: number; timestamp: number; speed: number | null }
 export interface NotificationInput {
   now: number; platform: 'ios' | 'android'; mode: 'STRICT' | 'AREA'; place: Place; observations: LocationObservation[];

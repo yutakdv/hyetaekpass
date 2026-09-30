@@ -5,13 +5,13 @@ import {previewDraft} from './preview.ts';
 import {ensureLocalRole,operationError,reportUpdateInput,reviewInput} from './operations.ts';
 import empty from '../../../contracts/empty-catalog.json';
 import {conditionLabel,reasonText} from '../../mobile/src/model.ts';
-const logo=new URL('../../../assets/brand/logo.svg',import.meta.url).href;
+const logo=new URL('../../../assets/brand/sseulttae/logo.svg',import.meta.url).href;
 interface Entry {id:string;releaseId:string;status:string;author:string;createdAt:string;catalog:Catalog;review:Review|null}
 interface Report {id:string;ruleId?:string;category:string;message:string;status:string;createdAt:string}
 interface Audit {id:number;actor:string;action:string;target:string;createdAt:string}
 const app=document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML=`<a class="skip-link" href="#workspace">본문으로 이동</a>
-<header><img src="${logo}" alt="혜택패스"><div><p class="eyebrow">운영 작업 공간</p><h1>자료와 안전을 함께 관리해요</h1></div><span id="connection-state" class="badge">연결 확인 전</span></header>
+<header><img src="${logo}" alt="쓸때"><div><p class="eyebrow">운영 작업 공간</p><h1>자료와 안전을 함께 관리해요</h1></div><span id="connection-state" class="badge">연결 확인 전</span></header>
 <div class="workspace"><aside><nav aria-label="관리 업무">
 <button data-go="dashboard" aria-current="page">대시보드<span>현재 상태와 다음 작업</span></button>
 <button data-go="catalogs">자료·검수<span>초안부터 게시까지</span></button>

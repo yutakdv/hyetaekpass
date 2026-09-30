@@ -223,3 +223,18 @@ xcodebuild -workspace FE/mobile/ios/app.xcworkspace -scheme app -configuration D
 | REDESIGN-NATIVE | 22:43 KST 최신 aria-* 수정까지 포함한 양 OS production compile exit 0. source 32개 SHA 전후 동일. [실제 source·bundle·권한·서명 증거](verification-evidence/redesign/native-build.json). iOS unsigned, Android debug 서명 내부 AAB, HTTPS placeholder. native GUI/실물/운영/스토어 미수행 |
 
 공개 카탈로그 0개·위치 OFF와 외부 게이트는 유지한다. 이번 scope의 BE·AI·복구·AWS 소스 변경은 없으며 이전 검사 결과를 새 실행으로 표시하지 않는다.
+
+## 2026-09-30 쓸때 0.3.0·공식 제공사 안내
+
+사용자 위임으로 쓸때/SSEULTTAE 이름·S 심벌·양 OS 아이콘과 9개 공식 제공사 안내를 적용했다. 공식 링크 등록은 개인 계정 연동·가입 인증·공개 계산 데이터 반입이 아니다. [공식 카드 조사](provider-card-research-2026-09-30.md), [멤버십 조사](provider-membership-research-2026-09-30.md), [브랜드](brand-redesign-2026-09-30.md), [최신 실제 UI/검사 결과](sseulttae-provider-implementation.md)를 기준으로 한다.
+
+| 증거 | 실제 확인 |
+|---|---|
+| SSEULTTAE-CHECK | 최종 typecheck·71/71 Node 회귀·관리 build·validation web export exit0. 제공사 코드 정적 보관 차단·공식 HTTPS·컨트롤러 조건 무효화·실제 WalletEditor 함수 검사 포함 |
+| SSEULTTAE-REVIEW | 독립 AI 검토가 재현한 누락 규칙 TRUE 보존과 멤버십 자동 이름의 CARD 상품명 우회 수정, RED→GREEN 확인. 사람 원문 검수로 사용하지 않음 |
+| SSEULTTAE-UI | 실제 390px 네이버/T/배민/신한 등록·공식 네이버 도움말 도착·정적 QR 보존·UNKNOWN→시험1,000/11,000/0→해당 QR, 320px 검색/상품명 필수·overflow0, 1024px 가운데 앱·관리320px 실제자료0/OFF/refresh |
+| SSEULTTAE-NATIVE | 23:47 KST latest source/config/deps28+brand12 SHA 전후 동일, production prebuild/pods·iOS unsigned device Release·Android debug 내부 AAB exit0. 쓸때/0.3.0·actual packaged icons·iOS ATSfalse/min16.4·Android cleartextfalse/min24target36. 이전 iOS 미참조 브랜드 캐시 제거 재빌드 후 실제 산출물 대조. [증거](verification-evidence/sseulttae-provider/native-build.json). native GUI/실물/POS/운영API/서명/스토어 미수행 |
+
+BE·AI·복구·AWS 소스는 이번 범위에서 변경하지 않았고 이전 결과를 새 실행으로 표시하지 않는다. 제휴·개인 코드·상품 혜택 자동 가져오기와 실제 단말 앱 링크/POS 수락은 미검증이다.
+
+최신 source 그래프는 1872 nodes/4211 edges로 재색인했다.

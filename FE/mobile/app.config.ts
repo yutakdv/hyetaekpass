@@ -2,15 +2,15 @@ import type {ExpoConfig} from 'expo/config';
 const production = process.env.APP_ENV === 'production';
 if(production&&process.env.EXPO_PUBLIC_VALIDATION_BUILD==='true')throw Error('Production cannot enable the validation HTTP exception.');
 const config: ExpoConfig = {
-  name: '혜택패스', slug: 'hyetaekpass', version: '0.2.0', scheme: 'hyetaekpass',
-  icon: '../../assets/brand/app-icon-1024.png', orientation: 'portrait', userInterfaceStyle: 'light',
+  name: '쓸때', slug: 'hyetaekpass', version: '0.3.0', scheme: 'hyetaekpass',
+  icon: '../../assets/brand/sseulttae/app-icon-1024.png', orientation: 'portrait', userInterfaceStyle: 'light',
   ios: {bundleIdentifier: 'com.hyetaekpass.app', supportsTablet: true, infoPlist: {NSAppTransportSecurity: {NSAllowsArbitraryLoads: !production}}},
-  android: {blockedPermissions: ['android.permission.READ_EXTERNAL_STORAGE','android.permission.WRITE_EXTERNAL_STORAGE','android.permission.SYSTEM_ALERT_WINDOW',...(production?['android.permission.ACCESS_BACKGROUND_LOCATION','android.permission.FOREGROUND_SERVICE_LOCATION','android.permission.FOREGROUND_SERVICE']:[])],package: 'com.hyetaekpass.app', adaptiveIcon: {foregroundImage: '../../assets/brand/app-icon-1024.png', backgroundColor: '#086653'}},
-  web: {favicon: '../../assets/brand/app-icon-1024.png'},
+  android: {blockedPermissions: ['android.permission.READ_EXTERNAL_STORAGE','android.permission.WRITE_EXTERNAL_STORAGE','android.permission.SYSTEM_ALERT_WINDOW',...(production?['android.permission.ACCESS_BACKGROUND_LOCATION','android.permission.FOREGROUND_SERVICE_LOCATION','android.permission.FOREGROUND_SERVICE']:[])],package: 'com.hyetaekpass.app', adaptiveIcon: {foregroundImage: '../../assets/brand/sseulttae/adaptive-foreground-1024.png', backgroundColor: '#4263EB'}},
+  web: {favicon: '../../assets/brand/sseulttae/favicon-48.png'},
   plugins: [
     ['expo-secure-store', {configureAndroidBackup: true, faceIDPermission: false}],
     ['expo-location', {locationWhenInUsePermission: '요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.', locationAlwaysAndWhenInUsePermission: production?false:'선택한 파일럿의 주변 안내에만 사용하며 관측이 부족하면 알리지 않습니다.', locationAlwaysPermission: production?false:'선택한 파일럿의 주변 안내에만 위치를 사용합니다.', motionUsagePermission: false, isIosBackgroundLocationEnabled: !production, isAndroidBackgroundLocationEnabled: !production}],
-    ['expo-notifications', {color: '#086653'}],
+    ['expo-notifications', {color: '#4263EB',icon:'../../assets/brand/sseulttae/notification-96.png'}],
     ['expo-build-properties', {android: {usesCleartextTraffic: !production}}], ...(!production?['expo-dev-client']:[])
   ]
 };

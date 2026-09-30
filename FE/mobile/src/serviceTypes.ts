@@ -79,6 +79,7 @@ export interface ServiceActions {
   evaluateCheck():Promise<void>;
   finishCheck():Promise<void>;
   openSource(entry:BenefitEntry):Promise<void>;
+  openProvider(id:string,purpose:'BENEFITS'|'CODE'):Promise<void>;
   locate():Promise<void>;
   setConsent(key:'location'|'advertising'|'background',value:boolean):Promise<void>;
   withdrawConsent():Promise<void>;

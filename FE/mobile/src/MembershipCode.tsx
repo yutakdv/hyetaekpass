@@ -6,6 +6,7 @@ import type {WalletItem} from '../../../contracts/types.ts';
 import type {MembershipCodeData} from './model.ts';
 import {membershipCodeSvg,validateMembershipCode} from './membership.ts';
 import {colors as c} from './theme.ts';
+import {providerById} from './providers.ts';
 
 export interface MembershipCodeProps {
   wallet:WalletItem;
@@ -13,9 +14,11 @@ export interface MembershipCodeProps {
   onSave:(code:MembershipCodeData)=>Promise<void>;
   onRemove:()=>Promise<void>;
   onClose:()=>void;
+  onOpenOfficial?:()=>Promise<void>;
 }
 
-export default function MembershipCode({wallet,code,onSave,onRemove,onClose}:MembershipCodeProps){
+export default function MembershipCode({wallet,code,onSave,onRemove,onClose,onOpenOfficial}:MembershipCodeProps){
+  const provider=providerById(wallet.providerId);
   const [saved,setSaved]=useState(code);
   const [editing,setEditing]=useState(!code);
   const [format,setFormat]=useState<MembershipCodeData['format']>(code?.format??'QR');
@@ -61,6 +64,7 @@ export default function MembershipCode({wallet,code,onSave,onRemove,onClose}:Mem
 
   async function save(){
     if(running.current)return;
+    if(provider){setError('이 서비스의 코드는 공식 서비스에서 확인해 주세요.');return;}
     try{validateMembershipCode(wallet.kind,format,value);}
     catch(e){const text=e instanceof Error?e.message:'코드 형식과 입력 내용을 확인해 주세요.';setError(text);AccessibilityInfo.announceForAccessibility(text);return;}
     if(!confirmed){setError('멤버십 전용 코드인지 확인해 주세요. 카드번호나 결제용 QR은 저장할 수 없어요.');return;}
@@ -93,11 +97,18 @@ export default function MembershipCode({wallet,code,onSave,onRemove,onClose}:Mem
   return <ScrollView ref={scroll} contentContainerStyle={s.page} keyboardShouldPersistTaps="handled">
     <View style={s.header}>
       <Pressable accessibilityRole="button" accessibilityLabel="뒤로" accessibilityState={{disabled:busy}} disabled={busy} onPress={back} style={({focused}:{pressed:boolean;focused?:boolean})=>[s.back,focused&&s.focus]}><Ionicons name="chevron-back" size={22} color={c.ink}/></Pressable>
-      <Text accessibilityRole="header" style={s.headerTitle}>{editing?'코드 등록':'멤버십 코드'}</Text>
+      <Text accessibilityRole="header" style={s.headerTitle}>{provider?'공식 서비스':editing?'코드 등록':'멤버십 코드'}</Text>
       <View style={s.backSpace}/>
     </View>
     {wallet.kind!=='MEMBERSHIP'?<>
       <Text style={s.body}>멤버십 수단에만 바코드·QR을 등록할 수 있어요. 카드번호나 결제용 코드는 등록하지 않아요.</Text>
+    </>:provider?<>
+      <View style={s.pass}>
+        <View style={s.passHeader}><View style={s.memberIcon}><Ionicons name="open-outline" size={24} color={c.primary}/></View><View style={s.flex}><Text style={s.eyebrow}>OFFICIAL MEMBERSHIP</Text><Text accessibilityRole="header" style={s.subtitle}>{provider.label}</Text></View></View>
+        <View style={s.card}><Text accessibilityRole="header" style={s.title}>{provider.codeMode==='OFFICIAL'?'현재 코드는\n공식 서비스에서':'혜택 적용은\n공식 서비스에서'}</Text><Text style={s.body}>{provider.subtitle}</Text><Text style={s.note}>{provider.codeMode==='OFFICIAL'?'공식 앱의 현재 코드를 제시해 주세요. 아래 버튼은 공식 서비스 또는 사용 안내로 이동해요.':'별도의 바코드 대신 공식 서비스에서 내 가입 상태와 적용되는 혜택을 확인해 주세요.'}</Text>{action(provider.codeMode==='OFFICIAL'?'공식 코드 안내':'공식 혜택 확인',()=>{if(onOpenOfficial)void onOpenOfficial().catch(()=>setError('공식 서비스를 열지 못했어요. 설치한 공식 앱에서 확인해 주세요.'));})}</View>
+      </View>
+      {!!error&&<Text accessibilityLiveRegion="polite" style={s.error}>{error}</Text>}
+      <View style={s.privacy}><Ionicons name="shield-checkmark-outline" size={15} color={c.muted}/><Text style={[s.note,s.flex]}>계정·코드·결제 정보는 가져오거나 저장하지 않아요. 공식 서비스에서 직접 확인해요.</Text></View>
     </>:<>
       {!!error&&<Text accessibilityLiveRegion="polite" style={s.error}>{error}</Text>}
       {!!message&&<Text accessibilityLiveRegion="polite" style={s.note}>{message}</Text>}

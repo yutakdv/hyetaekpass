@@ -1,0 +1,898 @@
+{
+  "verifiedAt": "2026-09-30T23:47:38.703868+09:00",
+  "status": "PASS: compiled production artifacts and configuration; unsigned iOS and Android internal debug signer only",
+  "brand": "쓸때 / SSEULTTAE",
+  "version": "0.3.0",
+  "gitHeadAtBuildStart": "c5015030b7c396566d89c286099a6b3b94b82e92",
+  "sourceScope": "Final frozen 0.3.0 brand/provider working tree including orphan-status removal and provider name reset on CARD switch. Build input guard excludes tests/docs being updated independently.",
+  "sourceCapturedAt": "2026-09-30T23:35:28.843863+09:00",
+  "sourceUnchangedDuringBuild": true,
+  "artifactCopiesMatch": true,
+  "sourceInputCount": 28,
+  "brandAssetInputCount": 12,
+  "buildInputGuardExclusions": [
+    "docs/**",
+    "**/test/**; tests may be edited independently and are not native bundle inputs"
+  ],
+  "sourceFiles": [
+    "FE/mobile/App.tsx",
+    "FE/mobile/app.config.ts",
+    "FE/mobile/index.ts",
+    "FE/mobile/package.json",
+    "FE/mobile/src/MembershipCode.tsx",
+    "FE/mobile/src/ServiceUI.tsx",
+    "FE/mobile/src/membership.ts",
+    "FE/mobile/src/model.ts",
+    "FE/mobile/src/native.ts",
+    "FE/mobile/src/protected.ts",
+    "FE/mobile/src/providers.ts",
+    "FE/mobile/src/runtime-safety.ts",
+    "FE/mobile/src/service.ts",
+    "FE/mobile/src/serviceTypes.ts",
+    "FE/mobile/src/theme.ts",
+    "contracts/catalog.schema.json",
+    "contracts/empty-catalog.json",
+    "contracts/types.ts",
+    "package-lock.json",
+    "package.json",
+    "packages/benefit-core/package.json",
+    "packages/benefit-core/src/calculate.ts",
+    "packages/benefit-core/src/catalog.ts",
+    "packages/benefit-core/src/index.ts",
+    "packages/benefit-core/src/location.ts",
+    "packages/benefit-core/src/sync.ts",
+    "packages/benefit-core/tsconfig.json",
+    "tsconfig.json"
+  ],
+  "brandAssetFiles": [
+    "assets/brand/sseulttae/symbol.svg",
+    "assets/brand/sseulttae/logo.svg",
+    "assets/brand/sseulttae/app-icon.svg",
+    "assets/brand/sseulttae/adaptive-foreground.svg",
+    "assets/brand/sseulttae/app-icon-1024.png",
+    "assets/brand/sseulttae/adaptive-foreground-1024.png",
+    "assets/brand/sseulttae/favicon-48.png",
+    "assets/brand/sseulttae/favicon-64.png",
+    "assets/brand/sseulttae/notification-96.png",
+    "assets/brand/sseulttae/symbol-cobalt-1024.png",
+    "assets/brand/sseulttae/symbol-white-1024.png",
+    "assets/brand/sseulttae/symbol-navy-1024.png"
+  ],
+  "referencedBrandAssets": [
+    "assets/brand/sseulttae/app-icon-1024.png",
+    "assets/brand/sseulttae/adaptive-foreground-1024.png",
+    "assets/brand/sseulttae/favicon-48.png",
+    "assets/brand/sseulttae/notification-96.png",
+    "assets/brand/sseulttae/symbol-cobalt-1024.png"
+  ],
+  "inputSHA256Before": {
+    "FE/mobile/App.tsx": "04d5d55d546a9925919ab23b7232dc29388795c3fa31a40406b085dc292ac4da",
+    "FE/mobile/app.config.ts": "fbebd2acc3edd0465ef7795dc58390b0b2e752fc1f75c918de43a67465be3717",
+    "FE/mobile/index.ts": "6d4f6f08a0c55d715761531244d207db8f5939eef4d9f5ea5b767b60c966977b",
+    "FE/mobile/package.json": "b8954f7ec3c3966a47942c14984f062f31ea941350ca22e0a3796f721d5d734e",
+    "FE/mobile/src/MembershipCode.tsx": "4b64fcd47a1bf350c29be253805c558f5ee02048bacf00c8d6aa2506710d4f28",
+    "FE/mobile/src/ServiceUI.tsx": "214191fe0fe079a0778e2c266957cc7e38380563ff64a050b345c1d814f6a0b9",
+    "FE/mobile/src/membership.ts": "6f6acf201cb67bc7cd7e465d624ee6447c957cb7fc5ffcc11fa054084a7863f5",
+    "FE/mobile/src/model.ts": "9f4550870e9f7d5f7a5fce2c566721bd685a261171b7ea403ae4fc712f1534ba",
+    "FE/mobile/src/native.ts": "f8d94241671fca6bb44df6de19dd58dcb4e0ac62ef43bd9a80da70c13f6714d0",
+    "FE/mobile/src/protected.ts": "51a9e502385cd02531085431b1bb7469ab98f607c847c9cf06f483e993408998",
+    "FE/mobile/src/providers.ts": "ab775529c31dcd80374d3fc0098a86d456211a5b2628389b5d9da1fdc05a9039",
+    "FE/mobile/src/runtime-safety.ts": "fc5bf245e54a1373ae6da52294b171656a37fd89bc0ca6069aca628ebc5053f5",
+    "FE/mobile/src/service.ts": "1381d8d486300756520792a833a1b4186e1021aaa8331c6ab7ead1eb0841143d",
+    "FE/mobile/src/serviceTypes.ts": "90f4cba25b142de9313ff29adfe7346a4d151d247c5abe4b19353a58ac3901d5",
+    "FE/mobile/src/theme.ts": "55acbc4de9a80485e582ad4d72f6fdf1ba08015957bf95f848141d76a62141ef",
+    "contracts/catalog.schema.json": "d40e7067c2a6a7caacc01bd231db242fb325f7d65ae50b1e5de2d5fefd13fac7",
+    "contracts/empty-catalog.json": "b1c250a2274f88449ed209829be009e50eae991dafefb1c438c8d58c2e994bcc",
+    "contracts/types.ts": "b49d3188d7bc32154b89c6b2ba35bfa84339878443e6d204decd58f5658e4f05",
+    "package-lock.json": "4d4ea1545a42171b1cf88635a65701329ef0b6b17d2e9c3aa6e122a142a1ebf9",
+    "package.json": "e0c1438a46d723e201f2ad09ec76264f3adc53d2dec14fbb9dff486212b835e7",
+    "packages/benefit-core/package.json": "6e3194f5057396e6bf0783f53b75956d6f5984980e29af3c5225fe41e0ba43a0",
+    "packages/benefit-core/src/calculate.ts": "be95e1fc2f908dc259eda2ee490a9f624544231ac1340688d046b1570f164a35",
+    "packages/benefit-core/src/catalog.ts": "9591efd9249638782bbcce5e6f4bd45a18a5b96c8ef02f830dcc5710acc559d1",
+    "packages/benefit-core/src/index.ts": "dec1fc34f729b608419b1f547714413d4ef88a0a0e389fda792bdab079349646",
+    "packages/benefit-core/src/location.ts": "032760a68f78737c5c132256c92499df9ce3fbe78f434b5bb51fcf0a4c145f2f",
+    "packages/benefit-core/src/sync.ts": "692749fc61beb666706aa96c76531d9882bec4fb4dedceed738d72ab29358cc3",
+    "packages/benefit-core/tsconfig.json": "520da54ba9f82e9f7a96cd77cf045c3a73d7deffd842f29c610dd88fb660f019",
+    "tsconfig.json": "5a260a3745ae4697c6b3542babcaf8f99e6d16043834611b61629fad2b458319",
+    "assets/brand/sseulttae/symbol.svg": "aa8c2a5dad09db117b8ee2488d9418c5eb6012a5210d6f5e4b6ad5151b832aca",
+    "assets/brand/sseulttae/logo.svg": "fe91f4ab14a89389d2cd190820c4f34e8f3fcbae49b042c2625e3575180b2b3b",
+    "assets/brand/sseulttae/app-icon.svg": "47a06f63429a91b6be79b66ca816c1563e5bb9ecb478128bc65ef2dd3ad4d6dd",
+    "assets/brand/sseulttae/adaptive-foreground.svg": "a833c6279d7e11c572060ff296c17b2080b2cf768aa67bb75dc54ddc3a713024",
+    "assets/brand/sseulttae/app-icon-1024.png": "631bd13034a09b69b9c06048c7f88936ada0a0bb7557a94a0ce268a21c6f6e48",
+    "assets/brand/sseulttae/adaptive-foreground-1024.png": "3d0c850aab25ebcdcac1784dca41d4a2dee48b7b462db77ea3bd5d24ef158b06",
+    "assets/brand/sseulttae/favicon-48.png": "297625cd9dbbef366b9032c85da3e402f3b389b2076a56b83b8513e3437a0c5f",
+    "assets/brand/sseulttae/favicon-64.png": "55471f29077326144f7a01608152ada1a494671ec24ef4ba03bf55da3cccc5e0",
+    "assets/brand/sseulttae/notification-96.png": "af53ace459223b4ba1eb8ab558dc3daa350e9371393e1a8998326c93418d1592",
+    "assets/brand/sseulttae/symbol-cobalt-1024.png": "a33080156599f08eeebfbe7abcdcfd1d8c4de0fd9927d6cc9054448572e325c8",
+    "assets/brand/sseulttae/symbol-white-1024.png": "bed00d2f813621e4f03978da8df5c76b5521687833e4d313e0d08488a524625d",
+    "assets/brand/sseulttae/symbol-navy-1024.png": "27df0c43356fe47fe71ade7fdf3c0a5dfcb037426ece66be30db3fbd661879c1"
+  },
+  "inputSHA256After": {
+    "FE/mobile/App.tsx": "04d5d55d546a9925919ab23b7232dc29388795c3fa31a40406b085dc292ac4da",
+    "FE/mobile/app.config.ts": "fbebd2acc3edd0465ef7795dc58390b0b2e752fc1f75c918de43a67465be3717",
+    "FE/mobile/index.ts": "6d4f6f08a0c55d715761531244d207db8f5939eef4d9f5ea5b767b60c966977b",
+    "FE/mobile/package.json": "b8954f7ec3c3966a47942c14984f062f31ea941350ca22e0a3796f721d5d734e",
+    "FE/mobile/src/MembershipCode.tsx": "4b64fcd47a1bf350c29be253805c558f5ee02048bacf00c8d6aa2506710d4f28",
+    "FE/mobile/src/ServiceUI.tsx": "214191fe0fe079a0778e2c266957cc7e38380563ff64a050b345c1d814f6a0b9",
+    "FE/mobile/src/membership.ts": "6f6acf201cb67bc7cd7e465d624ee6447c957cb7fc5ffcc11fa054084a7863f5",
+    "FE/mobile/src/model.ts": "9f4550870e9f7d5f7a5fce2c566721bd685a261171b7ea403ae4fc712f1534ba",
+    "FE/mobile/src/native.ts": "f8d94241671fca6bb44df6de19dd58dcb4e0ac62ef43bd9a80da70c13f6714d0",
+    "FE/mobile/src/protected.ts": "51a9e502385cd02531085431b1bb7469ab98f607c847c9cf06f483e993408998",
+    "FE/mobile/src/providers.ts": "ab775529c31dcd80374d3fc0098a86d456211a5b2628389b5d9da1fdc05a9039",
+    "FE/mobile/src/runtime-safety.ts": "fc5bf245e54a1373ae6da52294b171656a37fd89bc0ca6069aca628ebc5053f5",
+    "FE/mobile/src/service.ts": "1381d8d486300756520792a833a1b4186e1021aaa8331c6ab7ead1eb0841143d",
+    "FE/mobile/src/serviceTypes.ts": "90f4cba25b142de9313ff29adfe7346a4d151d247c5abe4b19353a58ac3901d5",
+    "FE/mobile/src/theme.ts": "55acbc4de9a80485e582ad4d72f6fdf1ba08015957bf95f848141d76a62141ef",
+    "contracts/catalog.schema.json": "d40e7067c2a6a7caacc01bd231db242fb325f7d65ae50b1e5de2d5fefd13fac7",
+    "contracts/empty-catalog.json": "b1c250a2274f88449ed209829be009e50eae991dafefb1c438c8d58c2e994bcc",
+    "contracts/types.ts": "b49d3188d7bc32154b89c6b2ba35bfa84339878443e6d204decd58f5658e4f05",
+    "package-lock.json": "4d4ea1545a42171b1cf88635a65701329ef0b6b17d2e9c3aa6e122a142a1ebf9",
+    "package.json": "e0c1438a46d723e201f2ad09ec76264f3adc53d2dec14fbb9dff486212b835e7",
+    "packages/benefit-core/package.json": "6e3194f5057396e6bf0783f53b75956d6f5984980e29af3c5225fe41e0ba43a0",
+    "packages/benefit-core/src/calculate.ts": "be95e1fc2f908dc259eda2ee490a9f624544231ac1340688d046b1570f164a35",
+    "packages/benefit-core/src/catalog.ts": "9591efd9249638782bbcce5e6f4bd45a18a5b96c8ef02f830dcc5710acc559d1",
+    "packages/benefit-core/src/index.ts": "dec1fc34f729b608419b1f547714413d4ef88a0a0e389fda792bdab079349646",
+    "packages/benefit-core/src/location.ts": "032760a68f78737c5c132256c92499df9ce3fbe78f434b5bb51fcf0a4c145f2f",
+    "packages/benefit-core/src/sync.ts": "692749fc61beb666706aa96c76531d9882bec4fb4dedceed738d72ab29358cc3",
+    "packages/benefit-core/tsconfig.json": "520da54ba9f82e9f7a96cd77cf045c3a73d7deffd842f29c610dd88fb660f019",
+    "tsconfig.json": "5a260a3745ae4697c6b3542babcaf8f99e6d16043834611b61629fad2b458319",
+    "assets/brand/sseulttae/symbol.svg": "aa8c2a5dad09db117b8ee2488d9418c5eb6012a5210d6f5e4b6ad5151b832aca",
+    "assets/brand/sseulttae/logo.svg": "fe91f4ab14a89389d2cd190820c4f34e8f3fcbae49b042c2625e3575180b2b3b",
+    "assets/brand/sseulttae/app-icon.svg": "47a06f63429a91b6be79b66ca816c1563e5bb9ecb478128bc65ef2dd3ad4d6dd",
+    "assets/brand/sseulttae/adaptive-foreground.svg": "a833c6279d7e11c572060ff296c17b2080b2cf768aa67bb75dc54ddc3a713024",
+    "assets/brand/sseulttae/app-icon-1024.png": "631bd13034a09b69b9c06048c7f88936ada0a0bb7557a94a0ce268a21c6f6e48",
+    "assets/brand/sseulttae/adaptive-foreground-1024.png": "3d0c850aab25ebcdcac1784dca41d4a2dee48b7b462db77ea3bd5d24ef158b06",
+    "assets/brand/sseulttae/favicon-48.png": "297625cd9dbbef366b9032c85da3e402f3b389b2076a56b83b8513e3437a0c5f",
+    "assets/brand/sseulttae/favicon-64.png": "55471f29077326144f7a01608152ada1a494671ec24ef4ba03bf55da3cccc5e0",
+    "assets/brand/sseulttae/notification-96.png": "af53ace459223b4ba1eb8ab558dc3daa350e9371393e1a8998326c93418d1592",
+    "assets/brand/sseulttae/symbol-cobalt-1024.png": "a33080156599f08eeebfbe7abcdcfd1d8c4de0fd9927d6cc9054448572e325c8",
+    "assets/brand/sseulttae/symbol-white-1024.png": "bed00d2f813621e4f03978da8df5c76b5521687833e4d313e0d08488a524625d",
+    "assets/brand/sseulttae/symbol-navy-1024.png": "27df0c43356fe47fe71ade7fdf3c0a5dfcb037426ece66be30db3fbd661879c1"
+  },
+  "prebuildConfigurationUnchangedSinceRegeneration": true,
+  "prebuildReuseReason": "app.config.ts, mobile package/lock and all selected brand assets are unchanged from successful production prebuild/pod install.",
+  "toolchain": {
+    "Xcode": "27.0 build 27A266a",
+    "iOSBuildSDK": "iPhoneOS27.0",
+    "AndroidJava": "Temurin 21.0.11+10-LTS",
+    "installedAndroidPlatform": "37",
+    "compiledAndroidSDK": "36",
+    "AndroidGradle": "9.3.1",
+    "Node": "26.0.0",
+    "npm": "11.12.1",
+    "Expo": "57.0.26",
+    "ReactNative": "0.86.3",
+    "React": "19.2.3"
+  },
+  "environment": {
+    "APP_ENV": "production",
+    "NODE_ENV": "production",
+    "EXPO_PUBLIC_API_URL": "https://api.hyetaekpass.invalid",
+    "EXPO_PUBLIC_VALIDATION_BUILD": "unset"
+  },
+  "prebuild": {
+    "exitCode": 0,
+    "log": "/private/tmp/sseulttae-production-prebuild.log"
+  },
+  "pods": {
+    "exitCode": 0,
+    "log": "/private/tmp/sseulttae-production-pods.log"
+  },
+  "iOS": {
+    "path": ".local-tools/artifacts/sseulttae-production-unsigned.app",
+    "exitCode": 0,
+    "log": "/private/tmp/sseulttae-ios-production.log",
+    "initialSuccessfulLog": "/private/tmp/sseulttae-ios-production-first-build.log",
+    "outputReassembledAfterRemovingOnlyCurrentAppDirectory": true,
+    "reassemblyReason": "Prior DerivedData app output retained one unused previous-brand PNG. Cleared current ignored app.app output and rebuilt incrementally; final prior-brand PNG absent. Earlier saved artifacts preserved.",
+    "displayName": "쓸때",
+    "version": "0.3.0",
+    "buildNumber": "1",
+    "bundleID": "com.hyetaekpass.app",
+    "supportedPlatforms": [
+      "iPhoneOS"
+    ],
+    "minimumOSVersion": "16.4",
+    "unsignedConfirmed": true,
+    "codesignExitCode": 1,
+    "codesignEvidence": ".local-tools/artifacts/sseulttae-production-unsigned.app: code object is not signed at all",
+    "NSAppTransportSecurity": {
+      "NSAllowsArbitraryLoads": false
+    },
+    "locationWhenInUse": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+    "AlwaysLocationKeys": [],
+    "Motion": null,
+    "FaceID": null,
+    "backgroundModes": [
+      "fetch"
+    ],
+    "nativePrivacyDeclaration": {
+      "NSPrivacyAccessedAPITypes": [
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "C617.1"
+          ]
+        },
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "CA92.1"
+          ]
+        },
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "35F9.1"
+          ]
+        }
+      ],
+      "NSPrivacyCollectedDataTypes": [],
+      "NSPrivacyTracking": false
+    },
+    "productionPlugins": [
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "motionUsagePermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#4263EB",
+          "icon": "../../assets/brand/sseulttae/notification-96.png"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": false
+          }
+        }
+      ]
+    ],
+    "compiledIconInfo": {
+      "CFBundleIcons": {
+        "CFBundlePrimaryIcon": {
+          "CFBundleIconFiles": [
+            "AppIcon60x60"
+          ],
+          "CFBundleIconName": "AppIcon"
+        }
+      },
+      "CFBundleIcons~ipad": {
+        "CFBundlePrimaryIcon": {
+          "CFBundleIconFiles": [
+            "AppIcon60x60",
+            "AppIcon76x76"
+          ],
+          "CFBundleIconName": "AppIcon"
+        }
+      }
+    },
+    "AssetsCarSHA256": "b79469475438e95949eca2fd3fb54e625856d634c762314789c05c58796d073b",
+    "assetutilAppIconRenditions": [
+      {
+        "AssetType": "Icon Image",
+        "BitsPerComponent": 8,
+        "ColorModel": "RGB",
+        "Colorspace": "srgb",
+        "Compression": "lzfse",
+        "Encoding": "ARGB",
+        "Icon Index": 1,
+        "Idiom": "phone",
+        "Name": "AppIcon",
+        "NameIdentifier": 6849,
+        "Opaque": true,
+        "PixelHeight": 1024,
+        "PixelWidth": 1024,
+        "RenditionName": "App-Icon-1024x1024@1x.png",
+        "Scale": 1,
+        "SHA1Digest": "B3606604F2EA6F232729E859F07597144F68B157E23807AF428F866FBDA15683",
+        "SizeOnDisk": 12461
+      },
+      {
+        "AssetType": "Icon Image",
+        "BitsPerComponent": 8,
+        "ColorModel": "RGB",
+        "Colorspace": "srgb",
+        "Compression": "lzfse",
+        "Encoding": "ARGB",
+        "Icon Index": 1,
+        "Idiom": "pad",
+        "Name": "AppIcon",
+        "NameIdentifier": 6849,
+        "Opaque": true,
+        "PixelHeight": 1024,
+        "PixelWidth": 1024,
+        "RenditionName": "App-Icon-1024x1024@1x.png",
+        "Scale": 1,
+        "SHA1Digest": "B3606604F2EA6F232729E859F07597144F68B157E23807AF428F866FBDA15683",
+        "SizeOnDisk": 12461
+      },
+      {
+        "AssetType": "MultiSized Image",
+        "Idiom": "phone",
+        "Name": "AppIcon",
+        "NameIdentifier": 6849,
+        "Scale": 1,
+        "SHA1Digest": "8E49D581FF1D34636A0ECFFD14AD9B1285DB705B1278A7F599E196C35454BDA3",
+        "SizeOnDisk": 236,
+        "Sizes": [
+          "1024x1024 index:1 idiom:phone"
+        ]
+      },
+      {
+        "AssetType": "MultiSized Image",
+        "Idiom": "pad",
+        "Name": "AppIcon",
+        "NameIdentifier": 6849,
+        "Scale": 1,
+        "SHA1Digest": "8E49D581FF1D34636A0ECFFD14AD9B1285DB705B1278A7F599E196C35454BDA3",
+        "SizeOnDisk": 236,
+        "Sizes": [
+          "1024x1024 index:1 idiom:pad"
+        ]
+      }
+    ],
+    "generatedAppIconSourcePixelsMatch": true,
+    "generatedAppIconSHA256": "0f3498799afe653a9f36719b62fc7f11984535a40f43a07cbed1f463a7e41994",
+    "uiSymbolSourceByteMatch": true,
+    "uiSymbolPath": "assets/__assets/brand/sseulttae/symbol-cobalt-1024.png",
+    "uiSymbolSHA256": "a33080156599f08eeebfbe7abcdcfd1d8c4de0fd9927d6cc9054448572e325c8",
+    "previousUnusedBrandAssetAbsent": true,
+    "bundleFileBytes": 34374585,
+    "bundleTreeSHA256": "fb6e65080759b02c4ecd9310af89cd1c41ba7343eb38eed2c8c09e63a5486f07",
+    "treeHashMethod": "SHA-256 of sorted compact UTF-8 JSON [relative path, file|symlink, file content SHA-256|link target]",
+    "jsBytes": 4975324,
+    "jsSHA256": "8b5611eca7675f6074cd846d9dc19a415d1c0e7048b59708d2113c5fa00b23f8",
+    "httpsPlaceholderInJS": true,
+    "fontAssets": [
+      "assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf"
+    ],
+    "fontSHA256": "fa2ab7d2557819b2bfe5009e46844efa7170cf177be7735d43aa2ac1295f1d54",
+    "rasterIconVisualInspection": "Compiled AppIcon60x60@2x.png decoded with sips and inspected as a local image: white two-card S mark on cobalt background. Native app GUI not exercised."
+  },
+  "Android": {
+    "path": ".local-tools/artifacts/sseulttae-production-internal.aab",
+    "exitCode": 0,
+    "log": "/private/tmp/sseulttae-android-production.log",
+    "buildDuration": "1m 8s",
+    "version": "0.3.0",
+    "versionCode": "1",
+    "package": "com.hyetaekpass.app",
+    "displayName": "쓸때",
+    "minSdkVersion": "24",
+    "targetSdkVersion": "36",
+    "architecture": "arm64-v8a",
+    "signingCertificate": "CN=Android Debug",
+    "signingCertificateSHA256": "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
+    "cleartext": false,
+    "allowBackup": true,
+    "dataExtractionRules": "@xml/secure_store_data_extraction_rules",
+    "fullBackupContent": "@xml/secure_store_backup_rules",
+    "permissions": [
+      "android.permission.ACCESS_COARSE_LOCATION",
+      "android.permission.ACCESS_FINE_LOCATION",
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.INTERNET",
+      "android.permission.POST_NOTIFICATIONS",
+      "android.permission.READ_APP_BADGE",
+      "android.permission.RECEIVE_BOOT_COMPLETED",
+      "android.permission.USE_BIOMETRIC",
+      "android.permission.USE_FINGERPRINT",
+      "android.permission.VIBRATE",
+      "android.permission.WAKE_LOCK",
+      "com.anddoes.launcher.permission.UPDATE_COUNT",
+      "com.google.android.c2dm.permission.RECEIVE",
+      "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
+      "com.htc.launcher.permission.READ_SETTINGS",
+      "com.htc.launcher.permission.UPDATE_SHORTCUT",
+      "com.huawei.android.launcher.permission.CHANGE_BADGE",
+      "com.huawei.android.launcher.permission.READ_SETTINGS",
+      "com.huawei.android.launcher.permission.WRITE_SETTINGS",
+      "com.hyetaekpass.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+      "com.majeur.launcher.permission.UPDATE_BADGE",
+      "com.oppo.launcher.permission.READ_SETTINGS",
+      "com.oppo.launcher.permission.WRITE_SETTINGS",
+      "com.sec.android.provider.badge.permission.READ",
+      "com.sec.android.provider.badge.permission.WRITE",
+      "com.sonyericsson.home.permission.BROADCAST_BADGE",
+      "com.sonymobile.home.permission.PROVIDER_INSERT_BADGE",
+      "me.everything.badger.permission.BADGE_COUNT_READ",
+      "me.everything.badger.permission.BADGE_COUNT_WRITE"
+    ],
+    "blockedPermissionsAbsent": [
+      "android.permission.ACCESS_BACKGROUND_LOCATION",
+      "android.permission.FOREGROUND_SERVICE_LOCATION",
+      "android.permission.FOREGROUND_SERVICE",
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "android.permission.SYSTEM_ALERT_WINDOW"
+    ],
+    "productionPlugins": [
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "motionUsagePermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#4263EB",
+          "icon": "../../assets/brand/sseulttae/notification-96.png"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": false
+          }
+        }
+      ]
+    ],
+    "aabBytes": 22653826,
+    "aabSHA256": "8ff8aa2e41567cc863bd84bad584ac7467543558255a282c59153d7d4b07df79",
+    "jsBytes": 3911572,
+    "jsSHA256": "713815ad6f151c31add762948b1cb4912872b945963308fe233b4c675759cd26",
+    "httpsPlaceholderInJS": true,
+    "fontAssets": [
+      "base/res/raw/__node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_ionicons.ttf"
+    ],
+    "fontSHA256": "fa2ab7d2557819b2bfe5009e46844efa7170cf177be7735d43aa2ac1295f1d54",
+    "packagedManifestSHA256": "9d2e247708cb1ab4415fe05ddd9c58bff821182697ca3e96c32b30f96632a0b3",
+    "packagedResourcesPBSHA256": "594ba0740c2dbf432debe37f2720a0147dd74c7bb944c849c6cbacf89791d0e4",
+    "compiledBadgingSummary": [
+      "package: name='com.hyetaekpass.app' versionCode='1' versionName='0.3.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "minSdkVersion:'24'",
+      "targetSdkVersion:'36'",
+      "application-label:'쓸때'",
+      "application: label='쓸때' icon='res/mipmap-anydpi-v26/ic_launcher.xml'"
+    ],
+    "compiledManifestConfigurationEvidence": [
+      "A: http://schemas.android.com/apk/res/android:versionName(0x0101021c)=\"0.3.0\" (Raw: \"0.3.0\")",
+      "A: http://schemas.android.com/apk/res/android:allowBackup(0x01010280)=true (Raw: \"true\")",
+      "A: http://schemas.android.com/apk/res/android:dataExtractionRules(0x0101063e)=@xml/secure_store_data_extraction_rules (Raw: \"@xml/secure_store_data_extraction_rules\")",
+      "A: http://schemas.android.com/apk/res/android:fullBackupContent(0x010104eb)=@xml/secure_store_backup_rules (Raw: \"@xml/secure_store_backup_rules\")",
+      "A: http://schemas.android.com/apk/res/android:icon(0x01010002)=@mipmap/ic_launcher (Raw: \"@mipmap/ic_launcher\")",
+      "A: http://schemas.android.com/apk/res/android:label(0x01010001)=@string/app_name (Raw: \"@string/app_name\")",
+      "A: http://schemas.android.com/apk/res/android:roundIcon(0x0101052c)=@mipmap/ic_launcher_round (Raw: \"@mipmap/ic_launcher_round\")",
+      "A: http://schemas.android.com/apk/res/android:usesCleartextTraffic(0x010104ec)=false (Raw: \"false\")",
+      "A: http://schemas.android.com/apk/res/android:resource(0x01010025)=@drawable/notification_icon (Raw: \"@drawable/notification_icon\")",
+      "A: http://schemas.android.com/apk/res/android:resource(0x01010025)=@drawable/notification_icon (Raw: \"@drawable/notification_icon\")"
+    ],
+    "compiledResourceEvidence": {
+      "color/iconBackground": "resource 0x7f06006e color/iconBackground\n      () #ff4263eb",
+      "color/notification_icon_color": "resource 0x7f0603aa color/notification_icon_color\n      () #ff4263eb",
+      "string/app_name": "resource 0x7f11001d string/app_name\n      () \"쓸때\"",
+      "drawable/notification_icon": "resource 0x7f0800fa drawable/notification_icon\n      (mdpi) (file) res/drawable-mdpi-v4/notification_icon.png type=PNG\n      (hdpi) (file) res/drawable-hdpi-v4/notification_icon.png type=PNG\n      (xhdpi) (file) res/drawable-xhdpi-v4/notification_icon.png type=PNG\n      (xxhdpi) (file) res/drawable-xxhdpi-v4/notification_icon.png type=PNG\n      (xxxhdpi) (file) res/drawable-xxxhdpi-v4/notification_icon.png type=PNG",
+      "mipmap/ic_launcher": "resource 0x7f0e0000 mipmap/ic_launcher\n      (mdpi) (file) res/mipmap-mdpi-v4/ic_launcher.webp\n      (hdpi) (file) res/mipmap-hdpi-v4/ic_launcher.webp\n      (xhdpi) (file) res/mipmap-xhdpi-v4/ic_launcher.webp\n      (xxhdpi) (file) res/mipmap-xxhdpi-v4/ic_launcher.webp\n      (xxxhdpi) (file) res/mipmap-xxxhdpi-v4/ic_launcher.webp\n      (anydpi-v26) (file) res/mipmap-anydpi-v26/ic_launcher.xml type=protoXML",
+      "mipmap/ic_launcher_foreground": "resource 0x7f0e0001 mipmap/ic_launcher_foreground\n      (mdpi) (file) res/mipmap-mdpi-v4/ic_launcher_foreground.webp\n      (hdpi) (file) res/mipmap-hdpi-v4/ic_launcher_foreground.webp\n      (xhdpi) (file) res/mipmap-xhdpi-v4/ic_launcher_foreground.webp\n      (xxhdpi) (file) res/mipmap-xxhdpi-v4/ic_launcher_foreground.webp\n      (xxxhdpi) (file) res/mipmap-xxxhdpi-v4/ic_launcher_foreground.webp"
+    },
+    "compiledAdaptiveIconXML": "N: android=http://schemas.android.com/apk/res/android (line=2)\n  E: adaptive-icon (line=2)\n      E: background (line=3)\n        A: http://schemas.android.com/apk/res/android:drawable(0x01010199)=@color/iconBackground (Raw: \"@color/iconBackground\")\n      E: foreground (line=4)\n        A: http://schemas.android.com/apk/res/android:drawable(0x01010199)=@mipmap/ic_launcher_foreground (Raw: \"@mipmap/ic_launcher_foreground\")",
+    "packagedRasterIcons": [
+      {
+        "path": "base/res/drawable-hdpi-v4/notification_icon.png",
+        "sha256": "3c84f989454f6d4ed2bd03017df1793b046207e38db5cdcab62bdf52ff798c2e",
+        "bytes": 364,
+        "size": [
+          36,
+          36
+        ],
+        "alphaBBox": [
+          7,
+          7,
+          29,
+          29
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": false,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/drawable-mdpi-v4/notification_icon.png",
+        "sha256": "87d4c2822abfb3ea3edc4f1518894673366ac04ce6b630ac971423f344730b2a",
+        "bytes": 262,
+        "size": [
+          24,
+          24
+        ],
+        "alphaBBox": [
+          4,
+          5,
+          20,
+          19
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": false,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/drawable-xhdpi-v4/notification_icon.png",
+        "sha256": "c8751ca05cb0e3cec53cf821434eaed88a3ec21a9f8145679ceef6776da2e426",
+        "bytes": 426,
+        "size": [
+          48,
+          48
+        ],
+        "alphaBBox": [
+          9,
+          10,
+          39,
+          38
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": false,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/drawable-xxhdpi-v4/notification_icon.png",
+        "sha256": "56398c71e24f7b6e1ae389bd7329f4956aa30a3001e2739edf9fd0511821b279",
+        "bytes": 698,
+        "size": [
+          72,
+          72
+        ],
+        "alphaBBox": [
+          14,
+          15,
+          58,
+          57
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": false,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/drawable-xxxhdpi-v4/notification_icon.png",
+        "sha256": "77f6c567ca60913e9a3419379ab5f35d243bfdfea805e1bd12db0a709c66dbf2",
+        "bytes": 744,
+        "size": [
+          96,
+          96
+        ],
+        "alphaBBox": [
+          19,
+          20,
+          77,
+          76
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": false,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/mipmap-hdpi-v4/ic_launcher.webp",
+        "sha256": "aca6412b103345736317e4eea43432e01bd2df27053586d54e7d2cccc974fe9a",
+        "bytes": 1027,
+        "size": [
+          72,
+          72
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          72,
+          72
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-hdpi-v4/ic_launcher_foreground.webp",
+        "sha256": "0e80a36aa12d10b5430e2ef64e8277e10e0240e41f60048efcb9dad7dc1d57aa",
+        "bytes": 1330,
+        "size": [
+          162,
+          162
+        ],
+        "alphaBBox": [
+          44,
+          45,
+          118,
+          117
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/mipmap-hdpi-v4/ic_launcher_round.webp",
+        "sha256": "ba30493484e65ce2d52d4816867fadf052b4b8266b22dd1538e3ad4511cad601",
+        "bytes": 1686,
+        "size": [
+          72,
+          72
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          72,
+          72
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-mdpi-v4/ic_launcher.webp",
+        "sha256": "aac94e1bdb38fa1d6764ad34d65696103223136824bc01302d79b3bb792e0ab5",
+        "bytes": 729,
+        "size": [
+          48,
+          48
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          48,
+          48
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-mdpi-v4/ic_launcher_foreground.webp",
+        "sha256": "0a5bb2256457f3156eb7b98aa84b59a5625413e287f9f57f53f89b150d07d296",
+        "bytes": 855,
+        "size": [
+          108,
+          108
+        ],
+        "alphaBBox": [
+          29,
+          30,
+          79,
+          78
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/mipmap-mdpi-v4/ic_launcher_round.webp",
+        "sha256": "f15cff7bd37f8d6076f08268706f8bfb63ff12d3620c69447195c076a29b9ce1",
+        "bytes": 1165,
+        "size": [
+          48,
+          48
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          48,
+          48
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-xhdpi-v4/ic_launcher.webp",
+        "sha256": "82fae4c450a1a316daa0625baf15cc7c99114f2c924fcd0ed20449d504db1e4d",
+        "bytes": 1340,
+        "size": [
+          96,
+          96
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          96,
+          96
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-xhdpi-v4/ic_launcher_foreground.webp",
+        "sha256": "22f72dc50f55086421adf820703a611ab49af3a513d391424cd87dc322df733c",
+        "bytes": 1838,
+        "size": [
+          216,
+          216
+        ],
+        "alphaBBox": [
+          59,
+          60,
+          157,
+          156
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/mipmap-xhdpi-v4/ic_launcher_round.webp",
+        "sha256": "9640a922f329e67d7d014a408136affcfefa92d11be238faa43ed4a918358a86",
+        "bytes": 2286,
+        "size": [
+          96,
+          96
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          96,
+          96
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-xxhdpi-v4/ic_launcher.webp",
+        "sha256": "85cb89b3218037f18c81738dcd3da398fca13bb203f78ef16a56e5974a2c89f6",
+        "bytes": 2091,
+        "size": [
+          144,
+          144
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          144,
+          144
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-xxhdpi-v4/ic_launcher_foreground.webp",
+        "sha256": "e201f66b93dc577351299d4842a1cea824d63aa192f4514bc3dbbb3c47e2a8fb",
+        "bytes": 2998,
+        "size": [
+          324,
+          324
+        ],
+        "alphaBBox": [
+          88,
+          91,
+          236,
+          233
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/mipmap-xxhdpi-v4/ic_launcher_round.webp",
+        "sha256": "759631a197f53effad13dfb1801820c82bb25a592f43fe7e9706a70343664f3e",
+        "bytes": 3494,
+        "size": [
+          144,
+          144
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          144,
+          144
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-xxxhdpi-v4/ic_launcher.webp",
+        "sha256": "72a1b0f5e2f7f07f727bc7cb28888ffc17b7c84667191b045eae7a77ca56ca60",
+        "bytes": 2730,
+        "size": [
+          192,
+          192
+        ],
+        "alphaBBox": [
+          0,
+          0,
+          192,
+          192
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      },
+      {
+        "path": "base/res/mipmap-xxxhdpi-v4/ic_launcher_foreground.webp",
+        "sha256": "7f3326fb5be269f3f16c2bae9f214bb58a149addcd40ee5d6c763b45e0de62d0",
+        "bytes": 4211,
+        "size": [
+          432,
+          432
+        ],
+        "alphaBBox": [
+          118,
+          121,
+          314,
+          311
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": true
+      },
+      {
+        "path": "base/res/mipmap-xxxhdpi-v4/ic_launcher_round.webp",
+        "sha256": "61f96a17b50f8ee4819956da150480bbb8751a47ec3f64c44c3283ac8700a8ef",
+        "bytes": 4710,
+        "size": [
+          192,
+          192
+        ],
+        "alphaBBox": [
+          1,
+          1,
+          192,
+          192
+        ],
+        "generatedPixelsMatch": true,
+        "generatedByteMatch": true,
+        "visiblePixelsAllWhite": false
+      }
+    ],
+    "uiSymbolSourcePixelsMatch": true,
+    "uiSymbolSourceByteMatch": false,
+    "uiSymbolSHA256": "ab50824679580f5e52a6ccdc9d80077d39eacadc2e63cf5f6ba501de40ad6c3f",
+    "rasterIconVisualInspection": "Compiled ic_launcher.webp inspected as local image: white two-card S mark on cobalt. Native app GUI not exercised.",
+    "pixelComparisonMethod": "All RGBA channels compared with ImageChops.difference(...).getbbox(alpha_only=False), including RGB under transparent pixels.",
+    "compiledInspectionMethod": "Copied base/resources.pb, base/res/* and base/manifest/AndroidManifest.xml byte-for-byte from the final AAB into an inspection ZIP with base/ prefix removed and manifest at root. aapt2 directly decodes protobuf resources and manifest; no APK build/install was performed.",
+    "inspectionLogs": [
+      "/private/tmp/sseulttae-aab-badging.log",
+      "/private/tmp/sseulttae-aab-resources.log",
+      "/private/tmp/sseulttae-aab-manifest.log",
+      "/private/tmp/sseulttae-aab-adaptive-icon.log",
+      "/private/tmp/sseulttae-aab-keytool.log"
+    ]
+  },
+  "commands": {
+    "prebuild": "env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production npm run prebuild -w @hyetaekpass/mobile -- --no-install > /private/tmp/sseulttae-production-prebuild.log 2>&1",
+    "prebuildCwd": "/Users/yutak/Desktop/SubProject",
+    "pods": "env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production pod install > /private/tmp/sseulttae-production-pods.log 2>&1",
+    "podsCwd": "/Users/yutak/Desktop/SubProject/FE/mobile/ios",
+    "iOS": "env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production xcodebuild -workspace FE/mobile/ios/app.xcworkspace -scheme app -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath .local-tools/ios-production-derived CODE_SIGNING_ALLOWED=NO build > /private/tmp/sseulttae-ios-production.log 2>&1",
+    "iOSCwd": "/Users/yutak/Desktop/SubProject",
+    "Android": "env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production ANDROID_HOME=/Users/yutak/Desktop/SubProject/.local-tools/android-sdk JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home GRADLE_USER_HOME=/Users/yutak/Desktop/SubProject/.local-tools/gradle-mobile ./gradlew :app:bundleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a > /private/tmp/sseulttae-android-production.log 2>&1",
+    "AndroidCwd": "/Users/yutak/Desktop/SubProject/FE/mobile/android"
+  },
+  "notPerformed": [
+    "Native app GUI/interaction on iOS or Android",
+    "Physical device installation",
+    "POS barcode/QR scan",
+    "Production API connection; endpoint is an HTTPS placeholder",
+    "Independent human original-source review",
+    "Production iOS signing",
+    "Production Android release signing; AAB uses internal debug certificate",
+    "App Store/Play Store submission",
+    "Public distribution/deployment"
+  ]
+}

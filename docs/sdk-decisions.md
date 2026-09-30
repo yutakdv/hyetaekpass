@@ -1,5 +1,13 @@
 # 구현 SDK 결정과 확인
 
+## 0.3.0 쓸때 브랜드·공식 서비스 안내
+
+새 SDK·금융 로그인·제휴 API를 추가하지 않았다. 기존 React Native `Linking.openURL`로 `providers.ts`에 고정한 공식 HTTPS 안내만 연다. providerId는 로컬 지갑 참조로 저장하며 API 요청·URL에 지갑 이름·코드·금액·위치·자격을 덧붙이지 않는다. 공개 도움말 웹 도착과 설치된 앱의 코드 화면 도착은 다른 결과다.
+
+네이버·T/KT/U+ 멤버십은 정적 코드 입력 대신 공식 안내를 사용하고 배민클럽은 공식 주문서 혜택으로 안내한다. 일반 멤버십의 기존 정적 코드 렌더는 유지한다. 직접 저장과 복원 경계에서도 공식 제공사의 코드 저장을 차단한다. 제공사·종류·등급·버전 변경 시 기존 자격과 소유 수단을 확인할 수 없는 임시 누락 규칙의 조건을 제거한다. 개인 카드 조회 API·MyData의 가능 범위·운영 조건은 [카드 조사](provider-card-research-2026-09-30.md), 개인 코드 정책은 [멤버십 조사](provider-membership-research-2026-09-30.md)에 있다.
+
+0.3.0은 Expo 표시명과 앱/적응형/알림/favicon 자산을 교체했다. 기술 package/bundle ID·저장 키는 유지하며 실행 결과는 [최신 검증](sseulttae-provider-implementation.md)을 따른다.
+
 ## 0.2.0 서비스 UI·멤버십 코드
 
 Expo 호환 [SafeAreaContext](https://docs.expo.dev/versions/latest/sdk/safe-area-context/) `~5.7.0`, [아이콘 모듈](https://docs.expo.dev/guides/icons/) `@expo/vector-icons ^15.1.1`를 사용한다. 설치 버전은 각각 5.7.0·15.1.1이다. Ionicons 직접 import로 실제 양 OS TTF 1개와 원본 SHA 일치를 확인했다. QR/CODE128/EAN13은 [bwip-js 공식 generic SVG](https://github.com/metafloor/bwip-js) `@bwip-js/generic 4.11.4`와 `react-native-svg 15.15.4`로 단말에서 렌더한다. 별도 원격 생성·카메라/OCR·사진 권한을 추가하지 않았다.

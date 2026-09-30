@@ -58,8 +58,8 @@ async function initialized(data=personalData()){const h=controller(data);await h
 
 test('real controller restores personal truth, invalidates wallet changes and stamps explicit reconfirmation',async()=>{
   const h=await initialized();h.p.actions.startCheck(h.p.benefits[0]);h.render();assert.equal(h.p.check.answers.m.values.tier,'TRUE');
-  h.p.actions.updateCheck({...h.p.check,amount:'12000'});h.render();await h.p.actions.evaluateCheck();h.render();
-  assert.equal(h.p.outcome.result?.best?.instantWon,1000);
+  h.p.actions.updateCheck({...h.p.check,amount:'12000'});h.render();await h.p.actions.evaluateCheck();const initialCheck=h.render();
+  assert.equal(initialCheck.outcome.result?.best?.instantWon,1000);
   await h.p.actions.saveWallet({...h.p.local.wallet[0],tier:'SILVER'});h.render();
   assert.equal(Object.keys(h.p.check.answers).length,0);assert.equal(h.p.outcome.result?.best,null);assert.equal(h.persisted.conditions.m,undefined);
   h.p.actions.updateCheck({...h.p.check,answers:{m:{values:{tier:'TRUE'},remainingWon:'1000',remainingUses:'1'}}});h.render();
@@ -67,6 +67,10 @@ test('real controller restores personal truth, invalidates wallet changes and st
   assert.equal(reconfirmed.outcome.result?.best?.instantWon,1000);
   assert.equal(stored.conditions.m.values.tier.ruleVersion,'1');assert.equal(stored.conditions.m.values.tier.month,core.kstMonth(now));
   h.p.actions.startCheck(h.p.benefits[0]);h.render();assert.equal(h.p.check.answers.m.values.tier,'TRUE');
+  h.p.actions.updateCheck({...h.p.check,amount:'12000'});h.render();await h.p.actions.evaluateCheck();const providerCheck=h.render();
+  assert.equal(providerCheck.outcome.result?.best?.instantWon,1000);
+  await h.p.actions.saveWallet({...h.p.local.wallet[0],providerId:'NAVER_PLUS'});h.render();
+  assert.equal(Object.keys(h.p.check.answers).length,0);assert.equal(h.p.outcome.result?.best,null);assert.equal(h.persisted.conditions.m,undefined);
 });
 for(const failed of [false,true])test(`real controller compensates a POST arriving after deletion; remote failure=${failed}`,async()=>{
   const h=await initialized(),sent=h.p.actions.submitReport({category:'OTHER',message:'synthetic report'});

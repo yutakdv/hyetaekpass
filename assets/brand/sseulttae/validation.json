@@ -1,0 +1,93 @@
+{
+  "sixVariantCheck": "PASS",
+  "masterCurrentColor": true,
+  "pngExportCheck": "PASS",
+  "rasterExporter": "bundled sharp; no new product dependency",
+  "visualReview": [
+    "review-board-1800.png",
+    "app-icon-1024.png",
+    "logo-navy-1024.png",
+    "size-check.png"
+  ],
+  "files": {
+    "01-moment.svg": {
+      "viewBox": "0 0 100 100",
+      "sha256": "6207f3669f3a1ada6953e87b6232f8df7cd5fca5230046c077831f69f9f6b7ed"
+    },
+    "02-pick.svg": {
+      "viewBox": "0 0 100 100",
+      "sha256": "8d91fd10b65061929dbbeaddde75c7d50cd66f57b45622c3ca22120b2d1d191a"
+    },
+    "03-code.svg": {
+      "viewBox": "0 0 100 100",
+      "sha256": "28521224bb12838a8da0641726a64d668feb35e1d0b1038d0a0928999e59a771"
+    },
+    "04-here.svg": {
+      "viewBox": "0 0 100 100",
+      "sha256": "3665fa6644b791271bd712b8ba2e696858aae5de33651f2c054e4f0b96cab2b8"
+    },
+    "05-wallet.svg": {
+      "viewBox": "0 0 100 100",
+      "sha256": "f27c866e81489a5cdcaf48aa71874d3fbe039d7236d48d92ae1c7a267f36364e"
+    },
+    "06-match.svg": {
+      "viewBox": "0 0 100 100",
+      "sha256": "1d6768b32881345e07cfc332ea09b62b490f6422e6863332abac3ec53801e4e1"
+    },
+    "app-icon-1024.png": {
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGB",
+      "sha256": "631bd13034a09b69b9c06048c7f88936ada0a0bb7557a94a0ce268a21c6f6e48",
+      "bytes": 24746,
+      "hasAlpha": false
+    },
+    "adaptive-foreground-1024.png": {
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "sha256": "3d0c850aab25ebcdcac1784dca41d4a2dee48b7b462db77ea3bd5d24ef158b06",
+      "bytes": 10005,
+      "alphaBoundingBox": [
+        281,
+        289,
+        743,
+        735
+      ],
+      "hasAlpha": true,
+      "farthestVisiblePixelRadius": 309.84915684894156,
+      "safeCircleRadius": 312.8888888888889,
+      "insideSafeCircle": true
+    },
+    "favicon-64.png": {
+      "width": 64,
+      "height": 64,
+      "mode": "RGB",
+      "sha256": "55471f29077326144f7a01608152ada1a494671ec24ef4ba03bf55da3cccc5e0",
+      "bytes": 790,
+      "hasAlpha": false
+    },
+    "favicon-48.png": {
+      "width": 48,
+      "height": 48,
+      "mode": "RGB",
+      "sha256": "297625cd9dbbef366b9032c85da3e402f3b389b2076a56b83b8513e3437a0c5f",
+      "bytes": 597,
+      "hasAlpha": false
+    },
+    "notification-96.png": {
+      "width": 96,
+      "height": 96,
+      "mode": "RGBA",
+      "sha256": "af53ace459223b4ba1eb8ab558dc3daa350e9371393e1a8998326c93418d1592",
+      "bytes": 765,
+      "alphaBoundingBox": [
+        19,
+        20,
+        77,
+        76
+      ],
+      "hasAlpha": true
+    }
+  }
+}
