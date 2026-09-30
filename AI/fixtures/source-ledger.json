@@ -1,0 +1,21 @@
+{
+  "brands": [{"id": "fixture-brand", "name": "개발용 가상 브랜드"}],
+  "products": [{"id": "fixture-card", "name": "개발용 가상 카드", "kind": "CARD"}],
+  "sources": [{
+    "usage": "FIXTURE",
+    "internalPermission": {"allowed": true, "nonPersonal": true, "evidenceRef": "internal-permission.txt"},
+    "source": {
+      "id": "fixture-source",
+      "url": "https://example.invalid/synthetic-development-data",
+      "documentVersion": "fixture-v1",
+      "checkedAt": "2026-09-30T00:00:00Z",
+      "freshUntil": "2099-01-01T00:00:00Z",
+      "rightsUntil": "2099-01-01T00:00:00Z",
+      "rights": {
+        "display": false, "transform": false, "iosDistribution": false,
+        "androidDistribution": false, "offlineCache": false, "update": false,
+        "revoke": false, "evidenceRef": "internal-permission.txt"
+      }
+    }
+  }]
+}

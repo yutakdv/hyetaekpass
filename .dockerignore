@@ -1,0 +1,15 @@
+**
+!BE/
+!BE/**
+!contracts/
+!contracts/**
+!infra/
+!infra/aws/
+!infra/aws/rds-ca.crt
+BE/build/
+BE/.gradle/
+BE/.journal-native/
+BE/.evidence/
+BE/**/.env*
+BE/**/*.log
+BE/**/__pycache__/

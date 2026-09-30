@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fixture-rule", "version": "fixture-v1", "title": "개발용 가상 5% 청구 할인",
+    "productId": "fixture-card", "brandId": "fixture-brand", "sourceId": "fixture-source",
+    "channels": ["OFFLINE"], "placeIds": [],
+    "startsAt": "2026-09-01T00:00:00Z", "endsAt": "2099-01-01T00:00:00Z",
+    "requiredConditions": ["spend"], "remainingWonRequired": true, "remainingUsesRequired": false,
+    "calculation": {
+      "kind": "PERCENT", "value": 500, "basis": "PAYABLE", "minimumWon": 10000,
+      "minimumBasis": "ORIGINAL", "capWon": 1000, "rounding": "FLOOR", "settlement": "BILLING"
+    },
+    "usageSteps": ["공식 원문과 사용자 조건 확인"], "exclusions": []
+  }
+]

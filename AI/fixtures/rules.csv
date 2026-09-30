@@ -1,0 +1,2 @@
+id,version,title,productId,brandId,sourceId,channels,placeIds,startsAt,endsAt,requiredConditions,remainingWonRequired,remainingUsesRequired,calculation.kind,calculation.value,calculation.basis,calculation.minimumWon,calculation.minimumBasis,calculation.capWon,calculation.rounding,calculation.settlement,usageSteps,exclusions
+fixture-rule,fixture-v1,개발용 가상 5% 청구 할인,fixture-card,fixture-brand,fixture-source,"[""OFFLINE""]",[],2026-09-01T00:00:00Z,2099-01-01T00:00:00Z,"[""spend""]",true,false,PERCENT,500,PAYABLE,10000,ORIGINAL,1000,FLOOR,BILLING,"[""공식 원문과 사용자 조건 확인""]",[]

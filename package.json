@@ -1,0 +1,35 @@
+{
+  "name": "hyetaekpass",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "FE/mobile",
+    "FE/admin",
+    "packages/benefit-core"
+  ],
+  "scripts": {
+    "test": "node --test packages/benefit-core/test/*.test.ts FE/mobile/test/*.test.ts FE/admin/test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "admin": "npm run dev -w @hyetaekpass/admin",
+    "mobile": "npm run start -w @hyetaekpass/mobile",
+    "build:admin": "npm run build -w @hyetaekpass/admin",
+    "build:web": "npm run web:export -w @hyetaekpass/mobile",
+    "test:ai": "python3 -m unittest discover -s AI/tests -v"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "@types/node": "^26.0.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "vite": "^8.1.0",
+    "uuid": "11.1.1"
+  },
+  "overrides": {
+    "uuid": "$uuid"
+  },
+  "dependencies": {
+    "react": "19.2.3",
+    "react-native": "0.86.3"
+  }
+}

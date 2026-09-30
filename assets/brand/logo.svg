@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" role="img" aria-labelledby="title">
+  <title id="title">혜택패스</title>
+  <path fill="#086653" fill-rule="evenodd" d="M25 24H75Q82 24 82 31V43C72 43 72 57 82 57V69Q82 76 75 76H25Q18 76 18 69V57C28 57 28 43 18 43V31Q18 24 25 24ZM38 34Q35 34 35 37V63Q35 66 38 66H41Q44 66 44 63V54H56V63Q56 66 59 66H62Q65 66 65 63V37Q65 34 62 34H59Q56 34 56 37V46H44V37Q44 34 41 34Z"/>
+  <g transform="translate(98 18)" fill="none" stroke="#192D26" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Original geometric Hangul lettering: 혜 택 패 스. No font dependency. -->
+    <path d="M8 6H20M5 13H23M30 6V49M40 6V49M25 21H30M25 32H30"/>
+    <ellipse cx="14" cy="29" rx="8" ry="8"/>
+    <path d="M57 6H79M57 6V28H79M57 17H76M87 6V29M97 6V29M87 17H97M58 41H98V55"/>
+    <path d="M112 7H134M112 31H134M117 7V31M129 7V31M141 6V49M151 6V49M141 24H151"/>
+    <path d="M179 7L164 29M179 7L194 29M163 45H195"/>
+  </g>
+</svg>

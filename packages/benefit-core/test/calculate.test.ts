@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { calculate } from '../src/calculate.ts';
+import { input } from './fixtures.ts';
+test('즉시/지금결제/청구: 명시된 중복과 적용후 기준 1000/11000/550',()=>{assert.deepEqual(calculate(input()).best,{ruleIds:['m','c'],instantWon:1000,payableWon:11000,billingWon:550,totalWon:1550});});
+test('UNKNOWN 실적은 기본 합계와 순위에서 제외',()=>{const x=input();x.conditions.c.values.spend.value='UNKNOWN';const r=calculate(x);assert.deepEqual(r.best?.ruleIds,['m']);assert.equal(r.results.find(r=>r.ruleId==='c')?.discountWon,null);});
+test('중복 모름에는 두 혜택의 합계를 만들지 않음',()=>{const x=input();x.catalog.combinations[0].allowed='UNKNOWN';assert.equal(calculate(x).plans.some(p=>p.ruleIds.length===2),false);});
+test('최소금액 아래/같음/위와 상한',()=>{for(const [amount,discount] of [[9999,0],[10000,1000],[10001,1000],[20000,1000]]){const x=input();x.amountWon=amount;x.productIds=['membership'];assert.equal(calculate(x).best?.instantWon??0,discount);}});
+test('잔여 모름/소진, 기준월 변경과 버전 변경',()=>{for(const mutate of [(x:ReturnType<typeof input>)=>x.conditions.m.remainingWon=null,(x:ReturnType<typeof input>)=>x.conditions.m.remainingUses=0,(x:ReturnType<typeof input>)=>x.conditions.m.month='2026-08',(x:ReturnType<typeof input>)=>x.conditions.m.ruleVersion='old']){const x=input();mutate(x);assert.equal(calculate(x).plans.some(p=>p.ruleIds.includes('m')),false);}});
+test('KST 종료 반개구간과 차단',()=>{const x=input();x.now=Date.parse('2026-09-30T15:00:00Z');assert.equal(calculate(x).best,null);const y=input();y.safety!.blockedRuleIds=['m','c'];assert.equal(calculate(y).best,null);});
+test('지원하지 않는 천원당/포인트, 자료 충돌은 안내',()=>{const x=input();x.catalog.rules[0].calculation=undefined;x.catalog.rules[0].unsupportedReason='천원당 할인 미지원';x.catalog.rules[1].status='CONFLICT';assert.equal(calculate(x).best,null);});
+test('원화 입력 경계 및 대상금액 검증',()=>{for(const amount of [-1,1.5,NaN,Infinity,1000000001]){const x=input();x.amountWon=amount;assert.throws(()=>calculate(x));}const x=input();x.eligibleAmountWon=13000;assert.throws(()=>calculate(x));});
+test('원 미만 반올림과 잔여한도',()=>{const x=input();x.productIds=['card'];x.amountWon=1999;x.conditions.c.remainingWon=500;x.catalog.rules[1].calculation!.value=1000;for(const [rounding,amount] of [['FLOOR',199],['HALF_UP',200],['CEIL',200]] as const){x.catalog.rules[1].calculation!.rounding=rounding;assert.equal(calculate(x).best?.billingWon,amount);}});
+test('공개 모드에 가상자료·사용자 작성 카탈로그 혼입 금지',()=>{const x=input();x.mode='PUBLIC';assert.equal(calculate(x).best,null);});
+test('지원 밖 산식/반올림/기간/자격값은 숫자 생성 금지',()=>{for(const mutate of [(x:ReturnType<typeof input>)=>(x.catalog.rules[0].calculation as any).kind='PER_THOUSAND',(x:ReturnType<typeof input>)=>(x.catalog.rules[0].calculation as any).rounding='UNKNOWN',(x:ReturnType<typeof input>)=>x.catalog.rules[0].endsAt='invalid',(x:ReturnType<typeof input>)=>(x.conditions.m.values.tier as any).value='invalid',(x:ReturnType<typeof input>)=>x.conditions.m.values.tier.checkedAt='2026-08-01T00:00:00Z']){const x=input();x.productIds=['membership'];mutate(x);assert.equal(calculate(x).best,null);}});

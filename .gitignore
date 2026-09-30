@@ -32,3 +32,17 @@ coverage/
 Pods/
 local.properties
 .xcode.env.local
+.worktrees/
+.superpowers/
+build/
+*.apk
+*.aab
+*.ipa
+*.xcarchive
+FE/mobile/ios/
+FE/mobile/android/
+infra/local/runtime/
+.local-tools/
+.codebase-memory/
+BE/.journal-native/
+BE/.evidence/
