@@ -1,0 +1,38 @@
+[
+  {
+    "ParameterKey": "CertificateArn",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "ImageDigest",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "OidcIssuer",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "OidcAudience",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "ImportSubjects",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "ReviewSubjects",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "PublishSubjects",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "AdminOrigin",
+    "ParameterValue": "REPLACE_BEFORE_APPROVED_DEPLOYMENT"
+  },
+  {
+    "ParameterKey": "PostgresVersion",
+    "ParameterValue": "17.11"
+  }
+]

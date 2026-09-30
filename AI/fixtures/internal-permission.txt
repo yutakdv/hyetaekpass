@@ -1,0 +1,3 @@
+DEVELOPMENT FIXTURE ONLY. This repository owns this synthetic example.
+Local structured processing of the fixture is allowed. The fixture has no personal data.
+This file is not evidence of rights to any real provider source, public catalog, or original human review.

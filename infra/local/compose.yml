@@ -1,0 +1,51 @@
+name: hyetaekpass-local
+services:
+  db:
+    image: postgres:17.11-alpine
+    command: ["postgres", "-c", "log_statement=none", "-c", "log_min_error_statement=panic", "-c", "log_parameter_max_length_on_error=0"]
+    environment:
+      POSTGRES_DB: hyetaekpass
+      POSTGRES_USER: hyetaekpass
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Run init-local.py first}
+    ports: ["127.0.0.1:54329:5432"]
+    volumes: ["database:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hyetaekpass -d hyetaekpass"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  api:
+    build:
+      context: ../..
+      dockerfile: BE/Dockerfile
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      DB_URL: jdbc:postgresql://db:5432/hyetaekpass
+      DB_USER: hyetaekpass
+      DB_PASSWORD: ${DB_PASSWORD:?Run init-local.py first}
+      JOURNAL_DIR: /journal
+    ports: ["${API_BIND_ADDRESS:-127.0.0.1}:8080:8080"]
+    volumes: ["safety-journal:/journal"]
+    depends_on:
+      db: {condition: service_healthy}
+  test:
+    image: python:3.13-alpine
+    profiles: [test]
+    network_mode: service:api
+    volumes: ["../../BE/tests:/tests:ro", "../../contracts:/contracts:ro"]
+    command: ["python", "-m", "unittest", "discover", "-s", "/tests", "-v"]
+    depends_on: [api]
+  tools:
+    image: python:3.14-alpine
+    profiles: [tools]
+    network_mode: none
+    read_only: true
+    working_dir: /workspace
+    volumes: ["../../AI:/workspace/AI:ro", "../../contracts:/workspace/contracts:ro"]
+    tmpfs: ["/tmp"]
+    entrypoint: ["python", "AI/data_tool.py"]
+volumes:
+  database:
+  safety-journal:
+    external: true
+    name: hyetaekpass-safety-journal

@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ES2022","lib":["ES2022","DOM"],"module":"ESNext","moduleResolution":"Bundler","strict":true,"noEmit":true,"allowImportingTsExtensions":true,"resolveJsonModule":true,"jsx":"react-jsx","skipLibCheck":true,"types":["node"]},"include":["contracts/**/*.ts","packages/**/*.ts","FE/**/*.ts","FE/**/*.tsx"]}

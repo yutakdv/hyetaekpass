@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>혜택패스 · 브랜드와 모바일 디자인</title>
+<style>
+  :root { color-scheme: light; --brand:#086653; --ink:#192D26; --muted:#52635A; --bg:#F6F8F3; --surface:#fff; --line:#718077; }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,sans-serif; }
+  main { max-width:1120px; margin:auto; padding:56px 24px; } h1 { margin:0; font-size:clamp(32px,6vw,56px); line-height:1.2; letter-spacing:-.04em; } h2 { font-size:28px; line-height:1.3; margin:48px 0 20px; } h3 { font-size:20px; margin:12px 0 8px; } p { margin:8px 0; } .muted { color:var(--muted); } .eyebrow { font-size:14px; letter-spacing:.05em; margin-bottom:12px; color:var(--brand); }
+  a { color:var(--brand); } a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible { outline:3px solid #285D8A; outline-offset:4px; } button,.action { font:inherit; min-height:48px; border-radius:12px; padding:10px 16px; cursor:pointer; border:1px solid var(--line); background:white; color:var(--ink); display:inline-flex; justify-content:center; align-items:center; text-decoration:none; } button.primary,.action.primary { background:var(--brand); color:#fff; border-color:var(--brand); } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; } .intro { max-width:670px; } .logo { width:320px; max-width:100%; margin:24px 0 8px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; } article,figure { margin:0; background:var(--surface); border-radius:20px; padding:24px; border:1px solid #D7DED4; } figure.selected { border:2px solid var(--brand); padding:23px; } .canvas { height:180px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:#F6F8F3; } .canvas img { width:136px; height:136px; } figure label { display:flex; align-items:center; gap:8px; min-height:48px; } input[type=radio] { width:22px; height:22px; accent-color:var(--brand); flex:none; } .variant-note { font-size:15px; min-height:72px; } #comparison { margin-top:18px; border-left:4px solid var(--brand); padding:14px 20px; background:#EAF3E9; }
+  .brand-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; } .icon-stage { background:var(--brand); border-radius:24px; display:grid; place-items:center; padding:30px; } .icon-stage img { width:200px; max-width:100%; border-radius:32px; } .swatches { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; } .swatch { padding:18px; min-width:125px; border-radius:12px; font-size:14px; border:1px solid #718077; }
+  .phone { width:100%; max-width:390px; margin:auto; background:#F6F8F3; border:1px solid #718077; border-radius:28px; overflow:hidden; } .phone header { padding:22px 20px 12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; } .phone header img { width:32px; height:32px; } .phone h3 { font-size:28px; line-height:1.3; } .phone-content { padding:0 20px 20px; } .phone .card { background:#fff; padding:18px; border:1px solid #D7DED4; border-radius:16px; margin:12px 0; } .phone .brand-card { background:#DFF584; border:0; } .badge { display:inline-block; font-size:14px; border-radius:8px; padding:5px 9px; background:#EAF3E9; color:#086653; } .badge.warning { color:#785100; background:#FFF4D6; } .demo { background:#FFF4D6; color:#785100; padding:8px 20px; font-size:14px; } .phone button { width:100%; } .phone nav { display:flex; flex-wrap:wrap; gap:4px; padding:12px; background:white; border-top:1px solid #718077; } .phone nav span { flex:1; text-align:center; min-height:44px; display:grid; place-items:center; border-radius:10px; } .phone nav .active { color:#086653; background:#EAF3E9; font-weight:700; } .amount { padding:12px 0; border-bottom:1px solid #D7DED4; } .amount:last-child { border:0; } .amount strong { display:block; font-size:28px; line-height:1.3; letter-spacing:-.02em; } .small { font-size:14px; } .status { padding:18px; border-radius:14px; border:1px solid #718077; margin-top:12px; } .status.warning { background:#FFF4D6; color:#785100; } .status.info { background:#EDF4FB; color:#285D8A; } .status.error { background:#FFF1EF; color:#B3261E; } details { margin-top:14px; } summary { min-height:44px; cursor:pointer; padding:8px 0; } footer { margin-top:56px; color:var(--muted); font-size:14px; } .lettering { font-weight:700; font-size:22px; }
+  @media (max-width:360px) { main { padding:28px 16px; } article,figure { padding:18px; } .grid { grid-template-columns:1fr; } .phone-content { padding:0 16px 16px; } }
+  @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto; } }
+</style>
+<main>
+  <header class="intro">
+    <p class="eyebrow">HYETAEKPASS · 2026.09.30 · 검증판 디자인</p>
+    <h1>결제 전에,<br>조건을 또렷하게.</h1>
+    <img class="logo" src="logo.svg" alt="혜택패스">
+    <p class="muted">내 카드·멤버십의 조건과 사용 순서를 결제 전에 확인해요.</p>
+    <div class="actions"><a class="action primary" href="logo.svg" download>SVG 로고 받기</a><a class="action" href="app-icon-1024.png" download>앱 아이콘 받기</a></div>
+  </header>
+  <section aria-labelledby="concepts-title">
+    <h2 id="concepts-title">여섯 방향, 하나의 패스</h2>
+    <p class="muted">다른 안을 선택하면 검토 이유를 비교할 수 있습니다. 제품 적용안은 01 열린 패스입니다.</p>
+    <div class="grid" style="margin-top:24px">
+      <figure class="selected"><div class="canvas"><img src="variants/01-pass.svg" alt="H 모양이 열린 패스"></div><label><input type="radio" name="variant" value="1" checked><strong>01 열린 패스 · 선정</strong></label><p class="variant-note">단일 덩어리와 투명 H. 카드와 멤버십을 담는 친근한 패스이며, 확인된 조건을 보는 과업에 집중합니다.</p><a href="variants/01-pass.svg" download>SVG 받기</a></figure>
+      <figure><div class="canvas"><img src="variants/02-wallet.svg" alt="둥근 지갑 외곽"></div><label><input type="radio" name="variant" value="2"><strong>02 펼친 지갑</strong></label><p class="variant-note">로컬 보유 수단을 잘 설명하지만 금융 지갑 서비스의 인상이 강합니다.</p><a href="variants/02-wallet.svg" download>SVG 받기</a></figure>
+      <figure><div class="canvas"><img src="variants/03-nearby.svg" alt="위치 핀 안의 작은 패스"></div><label><input type="radio" name="variant" value="3"><strong>03 가까운 발견</strong></label><p class="variant-note">발견을 돕는 위치 신호를 표현하나 방문 감지를 핵심 약속으로 오해하기 쉽습니다.</p><a href="variants/03-nearby.svg" download>SVG 받기</a></figure>
+      <figure><div class="canvas"><img src="variants/04-link.svg" alt="겹쳐 연결된 두 카드"></div><label><input type="radio" name="variant" value="4"><strong>04 연결된 카드</strong></label><p class="variant-note">보유 수단의 관계를 설명하지만 모든 중복을 허용하는 것으로 보일 수 있습니다.</p><a href="variants/04-link.svg" download>SVG 받기</a></figure>
+      <figure><div class="canvas"><img src="variants/05-modules.svg" alt="둥근 모듈로 만든 H"></div><label><input type="radio" name="variant" value="5"><strong>05 혜택 모듈</strong></label><p class="variant-note">정보를 모으는 H. 모듈 수가 늘고 작은 크기의 간격이 약해집니다.</p><a href="variants/05-modules.svg" download>SVG 받기</a></figure>
+      <figure><div class="canvas"><img src="variants/06-fold.svg" alt="접힌 북마크 모양의 패스"></div><label><input type="radio" name="variant" value="6"><strong>06 접힌 패스</strong></label><p class="variant-note">조건을 남기는 기록의 인상이 강해 개인 메모와 북마크에 더 가깝습니다.</p><a href="variants/06-fold.svg" download>SVG 받기</a></figure>
+    </div>
+    <p id="comparison" aria-live="polite">01 선정 이유: 작은 아이콘의 식별성과 카드·멤버십이라는 제품 범위가 함께 유지됩니다.</p>
+  </section>
+  <section aria-labelledby="identity-title">
+    <h2 id="identity-title">깊은 초록, 또렷한 정보</h2>
+    <div class="brand-row"><div class="icon-stage"><img src="app-icon-1024.png" alt="혜택패스 앱 아이콘"></div><article><h3>혜택패스 <span class="muted">Hyetaekpass</span></h3><p>할인액을 보장하는 인상보다 확인할 조건과 다음 행동을 분명하게 보여줍니다.</p><div class="swatches"><span class="swatch" style="background:#086653;color:white">패스 초록<br>#086653</span><span class="swatch" style="background:#DFF584">라임<br>#DFF584</span><span class="swatch" style="background:#F6F8F3">따뜻한 흰색<br>#F6F8F3</span></div><p class="small muted">앱 아이콘 원본은 불투명한 정사각형입니다. 실제 플랫폼 마스크·런처 적용은 별도 빌드 검증 대상입니다.</p></article></div>
+  </section>
+  <section aria-labelledby="mobile-title">
+    <h2 id="mobile-title">한눈에 읽는 모바일 흐름</h2>
+    <p class="muted">시각 검토용 화면입니다. 아래 숫자와 상품은 가상이며 실제 상품 자료·동작하는 앱이 아닙니다.</p>
+    <div class="brand-row" style="margin-top:24px">
+      <div class="phone"><div class="demo">개발용 가상 자료 · 실제 상품이 아님</div><header><img src="symbol.svg" alt=""><span class="lettering">혜택패스</span><span class="badge">검증판</span></header><div class="phone-content"><h3>결제 전에<br>한 번 확인해요.</h3><div class="card brand-card"><span class="badge">직접 선택</span><p>브랜드·점포·결제 채널을<br>직접 골라 확인해요.</p><button class="primary" type="button" data-demo>혜택 확인하기</button></div><div class="card"><span class="badge warning">공개 자료 준비 중</span><h3 style="font-size:20px">현재 공개 계산 자료가 없어요.</h3><p>이용권과 원문 검수를 확인한 자료부터 제공해요.</p><p class="small muted">위치·알림 없이 지갑을 사용할 수 있어요.</p></div><button type="button" data-demo>보유 수단 등록</button></div><nav aria-label="시각 예시 이동"><span class="active">혜택</span><span>내 지갑</span><span>설정</span></nav></div>
+      <div class="phone"><div class="demo">개발용 가상 자료 · 실제 상품이 아님</div><header><span class="lettering">예상 결과</span></header><div class="phone-content"><span class="badge">확인한 조건 기준 예상</span><div class="card brand-card"><strong>먼저 멤버십을 제시하세요</strong><p class="small">가상 조건: 멤버십 제시 → 카드 결제</p></div><div class="card"><div class="amount"><span>즉시 할인 예상</span><strong>1,000원</strong></div><div class="amount"><span>지금 결제액 예상</span><strong>11,000원</strong></div><div class="amount"><span>청구 할인 예상</span><strong>550원</strong><span class="small muted">이후 청구서에서 별도 반영</span></div></div><p class="small muted">가상 12,000원 입력. 중복·순서·기준금액과 개인 자격이 확인된 예시예요. 실제 적용을 보장하지 않아요.</p><details><summary>확인한 조건과 출처</summary><p class="small">직접 만든 가상 자료 · 확인일 2026-09-30. 실제 외부 검수나 상품 사용권을 뜻하지 않아요.</p></details></div><nav aria-label="시각 예시 이동"><span class="active">혜택</span><span>내 지갑</span><span>설정</span></nav></div>
+    </div>
+  </section>
+  <section aria-labelledby="states-title"><h2 id="states-title">막힌 이유, 다음 행동</h2><div class="grid">
+    <article><h3>조건 모름</h3><div class="status warning"><strong>조건 확인이 필요해요.</strong><p>모르는 조건은 예상 합계에 넣지 않았어요.</p></div><p>실적 · 잔여 한도 · 중복 여부를 구체적으로 표시하고 공식 경로로 연결합니다.</p></article>
+    <article><h3>오프라인·만료</h3><div class="status info"><strong>최신 상태 확인이 필요해요.</strong><p>안전 확인 기한이 지나 예상 계산과 자동 알림을 멈췄어요.</p></div><p>마지막 정상 확인 시각을 표시합니다. 갱신 실패로 확인일을 연장하지 않습니다.</p></article>
+    <article><h3>오류</h3><div class="status error"><strong>자료를 불러오지 못했어요.</strong><p>연결 상태를 확인하고 다시 시도해 주세요.</p></div><p>다시 시도와 직접 선택을 제공하고 실패를 0원 결과로 바꾸지 않습니다.</p></article>
+    <article><h3>권한 거절</h3><div class="status"><strong>위치 없이도 확인할 수 있어요.</strong><p>지역과 점포를 직접 선택해 주세요.</p></div><p>거절 후 반복 권한 요청 없이 검색·지갑·계산 흐름을 유지합니다.</p></article>
+    <article><h3>안내 전용</h3><div class="status info"><strong>이 혜택은 안내만 제공해요.</strong><p>지원하지 않는 산식의 이유와 공식 이용 경로를 보여줍니다.</p></div><p>천원당 할인·포인트를 임의의 원화 합계로 바꾸지 않습니다.</p></article>
+    <article><h3>큰 글씨·스크린리더</h3><div class="status"><strong>읽고 누르기 쉽게</strong><p>본문 17px · 버튼 48px · 최소 터치 44px</p></div><p>상태를 색과 문구로 표시합니다. 큰 글씨에서 선택과 금액은 세로로 배치합니다.</p></article>
+  </div><p id="demo-notice" class="muted" aria-live="polite"></p></section>
+  <footer>직접 만든 SVG 원본 · 외부 이미지·폰트·스크립트 없음. 상표권·실기기·스토어 승인 증거와 디자인 검토는 별개입니다.</footer>
+</main>
+<script>
+  const reasons = ['01 선정 이유: 작은 아이콘의 식별성과 카드·멤버십이라는 제품 범위가 함께 유지됩니다.','02 검토: 지갑으로 금융 서비스를 연상시킬 수 있어 선정하지 않았습니다.','03 검토: 위치와 방문 감지를 제품의 기본 약속으로 오해할 수 있습니다.','04 검토: 모든 카드·멤버십 조합이 중복 적용되는 것으로 읽힐 수 있습니다.','05 검토: 작은 표시 크기에서 모듈 간격이 약해집니다.','06 검토: 혜택 확인보다 북마크와 메모에 가까운 인상입니다.'];
+  document.querySelectorAll('input[name="variant"]').forEach(input => input.addEventListener('change', () => { document.querySelectorAll('figure').forEach(figure => figure.classList.remove('selected')); input.closest('figure').classList.add('selected'); document.getElementById('comparison').textContent = reasons[Number(input.value)-1]; }));
+  document.querySelectorAll('[data-demo]').forEach(button => button.addEventListener('click', () => { document.getElementById('demo-notice').textContent = '이 페이지는 디자인 미리보기입니다. 실제 등록·계산 기능은 모바일 앱에서 제공합니다.'; }));
+</script>
+</html>

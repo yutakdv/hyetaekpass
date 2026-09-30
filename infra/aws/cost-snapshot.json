@@ -1,0 +1,133 @@
+{
+  "checkedAt": "2026-09-30T08:45:00Z",
+  "region": "ap-northeast-2",
+  "pricing": "OnDemand/no free tier/no credits/no tax",
+  "rates": [
+    {
+      "service": "AmazonECS",
+      "sku": "HNBF4GM42YHAVRU3",
+      "usage": "APN2-Fargate-ARM-GB-Hours",
+      "usd": "0.0040900000",
+      "unit": "hours",
+      "description": "AWS Fargate - ARM - Memory - Asia Pacific (Seoul)",
+      "publicationDate": "2026-09-11T12:44:25Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECS/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "AmazonECS",
+      "sku": "27GM5GDE29DV8J8U",
+      "usage": "APN2-Fargate-ARM-vCPU-Hours:perCPU",
+      "usd": "0.0372500000",
+      "unit": "hours",
+      "description": "AWS Fargate - ARM - vCPU - Asia Pacific (Seoul)",
+      "publicationDate": "2026-09-11T12:44:25Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECS/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "AmazonRDS",
+      "sku": "UMH398UHTY46K8BK",
+      "usage": "APN2-InstanceUsage:db.t4g.small",
+      "usd": "0.0510000000",
+      "unit": "Hrs",
+      "description": "$ 0.051 per RDS db.t4g.small Single-AZ instance hour (or partial hour) running PostgreSQL",
+      "publicationDate": "2026-09-29T23:30:06Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "AmazonRDS",
+      "sku": "8TFTRRBWJSP95DQP",
+      "usage": "APN2-RDS:GP3-Storage",
+      "usd": "0.1310000000",
+      "unit": "GB-Mo",
+      "description": "$0.131 per GB-month of provisioned GP3 storage running PostgreSQL",
+      "publicationDate": "2026-09-29T23:30:06Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "AWSELB",
+      "sku": "VUV9M7PZ543S2SC9",
+      "usage": "APN2-LoadBalancerUsage",
+      "usd": "0.0225000000",
+      "unit": "Hrs",
+      "description": "$0.0225 per Application LoadBalancer-hour (or partial hour)",
+      "publicationDate": "2026-09-11T12:45:44Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "AWSELB",
+      "sku": "CX4ZBV2SE6F5HJV3",
+      "usage": "APN2-LCUUsage",
+      "usd": "0.0080000000",
+      "unit": "LCU-Hrs",
+      "description": "$0.008 per used Application load balancer capacity unit-hour (or partial hour)",
+      "publicationDate": "2026-09-11T12:45:44Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "AmazonVPC",
+      "sku": "ZKBHEVDXYBRCKFQ8",
+      "usage": "APN2-PublicIPv4:InUseAddress",
+      "usd": "0.0050000000",
+      "unit": "Hrs",
+      "description": "$0.005 per In-use public IPv4 address per hour",
+      "publicationDate": "2026-09-17T19:05:28Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonVPC/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "awswaf",
+      "sku": "UA56KP4EHHD79NYX",
+      "usage": "APN2-RequestV2-Tier0",
+      "usd": "0.0000006000",
+      "unit": "Request",
+      "description": "$0.60 per million Request for Request Processed Tier0 in Asia Pacific (Seoul)",
+      "publicationDate": "2026-09-14T16:39:21Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awswaf/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "awswaf",
+      "sku": "85AJY2C7D55NSMW4",
+      "usage": "APN2-RuleV2",
+      "usd": "1.0000000000",
+      "unit": "Month",
+      "description": "$1.00 per rule created (prorated hourly)",
+      "publicationDate": "2026-09-14T16:39:21Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awswaf/current/ap-northeast-2/index.json"
+    },
+    {
+      "service": "awswaf",
+      "sku": "SRKDCA7D9WECKN39",
+      "usage": "APN2-WebACLV2",
+      "usd": "5.0000000000",
+      "unit": "Month",
+      "description": "$5.00 per web ACL created (prorated hourly)",
+      "publicationDate": "2026-09-14T16:39:21Z",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awswaf/current/ap-northeast-2/index.json"
+    }
+  ],
+  "assumptions": {
+    "hours": 730,
+    "taskVcpu": 0.5,
+    "taskMemoryGB": 2,
+    "postgresInstance": "db.t4g.small Single-AZ",
+    "storageGB": 20,
+    "albLCU": 1,
+    "publicIPv4Count": 3,
+    "wafWebACL": 1,
+    "wafRules": 2,
+    "requests": 1000000
+  },
+  "excluded": [
+    "CloudWatch",
+    "S3 requests/storage/versions",
+    "CloudFront traffic",
+    "ECR",
+    "Secrets Manager",
+    "RDS CPU surplus",
+    "snapshot beyond free allowance",
+    "data transfer",
+    "DNS/domain",
+    "tax/FX",
+    "OIDC provider",
+    "store/device/review/legal/labor"
+  ]
+}
