@@ -1,5 +1,13 @@
 # 구현 SDK 결정과 확인
 
+## 0.2.0 서비스 UI·멤버십 코드
+
+Expo 호환 [SafeAreaContext](https://docs.expo.dev/versions/latest/sdk/safe-area-context/) `~5.7.0`, [아이콘 모듈](https://docs.expo.dev/guides/icons/) `@expo/vector-icons ^15.1.1`를 사용한다. 설치 버전은 각각 5.7.0·15.1.1이다. Ionicons 직접 import로 실제 양 OS TTF 1개와 원본 SHA 일치를 확인했다. QR/CODE128/EAN13은 [bwip-js 공식 generic SVG](https://github.com/metafloor/bwip-js) `@bwip-js/generic 4.11.4`와 `react-native-svg 15.15.4`로 단말에서 렌더한다. 별도 원격 생성·카메라/OCR·사진 권한을 추가하지 않았다.
+
+QR 512 UTF-8 bytes, CODE128 ASCII 80자, EAN13 13자리 checksum을 검사한다. 사용자가 정적 멤버십 코드임을 확인한 값만 기존 보호 저장소에 보관한다. 코드값은 계산·제보·URL·로그에 자동 첨부하지 않는다. 동적 코드·실제 스캐너 판독은 지원/통과로 표시하지 않는다. 웹 preview는 합성 시험 코드만 사용했다.
+
+최종 0.2.0 양 OS production 빌드·compiled 권한·source/산출물을 다시 대조했다. validation 설치/launch는 마지막 기본 수단/수동 refresh 두 수정 직전 source다. [최신 결과](service-verification.md)·[기기 기록](device-test.md)을 따른다. 아래는 초기 검증판 결정 이력이다.
+
 2026-09-30 [Expo 공식 SDK](https://docs.expo.dev/versions/latest/), [Location](https://docs.expo.dev/versions/latest/sdk/location/), [TaskManager](https://docs.expo.dev/versions/latest/sdk/task-manager/), [Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/), [SecureStore](https://docs.expo.dev/versions/latest/sdk/securestore/)와 설치한 `expo/bundledNativeModules.json`을 대조했다. Expo 57.0.26의 호환값 React 19.2.3/RN 0.86.3을 루트와 모바일 workspace에 고정했다. peer 자동 호이스트로 RN 0.87.1이 선택돼 web export가 실패한 문제는 호환 버전 정합 후 해결했다. 앱 UUID는 `expo-crypto`를 사용한다. Expo Go는 배경 실기기 증거로 쓰지 않는다.
 
 SecureStore는 항목별 크기를 분할하고 새 bank 저장 후 pointer를 변경한다. iOS `AFTER_FIRST_UNLOCK_THIS_DEVICE_ONLY`만으로 동일 단말 백업 복원을 막았다고 보지 않는다. 백업에서 제외되는 Caches의 설치 marker가 없으면 저장 상태를 먼저 삭제한다. 캐시 축출도 안전하게 삭제하는 조건이며 iOS 앱 제거 뒤 Keychain 잔존 가능성에 대응한다. 재설치·복원 실기기 시험은 미수행이다. Android는 SecureStore backup 제외 설정을 사용한다. 앱 내 전체삭제는 작업 중지·단말 삭제를 서버 연결과 독립 수행하고 미삭제 제보 토큰은 경고와 재시도 UI에 남긴다.

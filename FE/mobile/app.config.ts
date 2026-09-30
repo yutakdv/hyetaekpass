@@ -2,7 +2,7 @@ import type {ExpoConfig} from 'expo/config';
 const production = process.env.APP_ENV === 'production';
 if(production&&process.env.EXPO_PUBLIC_VALIDATION_BUILD==='true')throw Error('Production cannot enable the validation HTTP exception.');
 const config: ExpoConfig = {
-  name: '혜택패스', slug: 'hyetaekpass', version: '0.1.0', scheme: 'hyetaekpass',
+  name: '혜택패스', slug: 'hyetaekpass', version: '0.2.0', scheme: 'hyetaekpass',
   icon: '../../assets/brand/app-icon-1024.png', orientation: 'portrait', userInterfaceStyle: 'light',
   ios: {bundleIdentifier: 'com.hyetaekpass.app', supportsTablet: true, infoPlist: {NSAppTransportSecurity: {NSAllowsArbitraryLoads: !production}}},
   android: {blockedPermissions: ['android.permission.READ_EXTERNAL_STORAGE','android.permission.WRITE_EXTERNAL_STORAGE','android.permission.SYSTEM_ALERT_WINDOW',...(production?['android.permission.ACCESS_BACKGROUND_LOCATION','android.permission.FOREGROUND_SERVICE_LOCATION','android.permission.FOREGROUND_SERVICE']:[])],package: 'com.hyetaekpass.app', adaptiveIcon: {foregroundImage: '../../assets/brand/app-icon-1024.png', backgroundColor: '#086653'}},

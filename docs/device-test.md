@@ -8,7 +8,27 @@
 
 첫 시험은 보유 iPhone부터 진행하고 Android 기본 빌드는 함께 유지한다. iPhone 모델·OS와 Android 실기기는 아직 확인되지 않았다. 공개 위치 기능은 법률·권리·동의·정책·현장 품질 게이트를 충족한 OS·장소만 켠다. 준비되지 않은 상태에서 공용 자동 기능은 OFF로 둔다.
 
-## 현재 빌드·화면 증거와 한계
+## 0.2.0 최신 서비스 빌드
+
+2026-09-30 21:24 KST 최종 서비스 소스로 production 두 OS Release 빌드 exit 0을 확인했다. iOS unsigned 앱은 `.local-tools/artifacts/hyetaekpass-service-production-unsigned.app`에 있고 파일 합계 34,339,909 bytes, main.jsbundle SHA `adb5c7f6a1e0de478a6dd0f8cff33887b4ff535ca9b7e3053182c1c575793a5e`다. Android arm64 AAB `.local-tools/artifacts/hyetaekpass-service-production-internal.aab`는 22,640,168 bytes, SHA `3d995a85f0c7ecf15e85c3b419eacb5cfac0897cc14f506175f2420b916c9e59`이며 debug 인증서 서명 내부 산출물이다. 실제 운영 API·서명·스토어 제출은 미수행이다.
+
+Validation 설치/launch 검사는 마지막 기본 수단 선택과 수동 refresh busy 예외 두 수정 직전 source로 진행했다. `.local-tools/artifacts/hyetaekpass-service-validation.apk`는 32,327,357 bytes, SHA `069895ac2e03d67ed2864a70699cdf1f230acd560e5eb2d812ea9536a3462b11`이다. iOS Simulator PID 82853·Android emulator PID 3614 유지, JS fatal/error 패턴 및 AndroidRuntime 오류 없음. Native GUI 과업은 미검증이다. 최신 Node 67/67·typecheck·admin/web export와 compiled HTTPS/권한·source 31개 대조는 [서비스 SX 결과](service-verification.md)·[native 증거](verification-evidence/service/native-build.json)를 따른다. 아래 0.1.0 크기/해시/42개 검사는 이전 이력으로 보존한다.
+
+실물 시험에는 정적 멤버십 QR/CODE128/EAN13을 실제 공식 코드와 대조하고 스캐너 판독·동적 코드 구분·삭제/백업·200% OS 글씨·VoiceOver/TalkBack을 추가한다. 시험 코드 화면은 실제 고객 코드가 아니며 매장 적용을 증명하지 않는다. 사용자가 멤버십 코드임을 확인한 값만 입력하고 카드번호/결제용 QR은 넣지 않는다.
+
+다음은 production prebuild·pod install 이후 실제 실행한 최종 명령이다. iOS는 저장소 루트, Android는 `FE/mobile/android`에서 실행했다. JDK/SDK 경로는 이번 Mac의 설치 경로이며 다른 환경에서는 실제 위치로 바꾼다.
+
+```sh
+env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production xcodebuild -workspace FE/mobile/ios/app.xcworkspace -scheme app -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath .local-tools/ios-production-derived CODE_SIGNING_ALLOWED=NO build > /private/tmp/hyetaekpass-service-ios-production-final.log 2>&1
+```
+
+```sh
+env -u EXPO_PUBLIC_VALIDATION_BUILD APP_ENV=production EXPO_PUBLIC_API_URL=https://api.hyetaekpass.invalid NODE_ENV=production ANDROID_HOME=/Users/yutak/Desktop/SubProject/.local-tools/android-sdk JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home GRADLE_USER_HOME=/Users/yutak/Desktop/SubProject/.local-tools/gradle-mobile ./gradlew :app:bundleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a > /private/tmp/hyetaekpass-service-android-production-final.log 2>&1
+```
+
+Validation iOS `hyetaekpass-service-validation.app/main.jsbundle`은 4,938,467 bytes, SHA `22fcf4aae8c2bd4213454ecea59c433c832dfca8f4e02cf6b1cd14ae28a1cde6`다. 마지막 두 변경 직전 실행본이라는 범위를 유지한다.
+
+## 이전 0.1.0 빌드·화면 증거와 한계
 
 총괄이 실행한 결과를 인계받고 Release 로그·산출물 크기·APK 해시를 대조했다. iOS 시뮬레이터 설치와 `com.hyetaekpass.app` 실행은 성공했으며 native 화면 과업 검사는 미확인이다. 현재 CUA가 native Simulator UI 제어를 지원하지 않아 설치·launch 성공으로 화면 과업을 통과 처리하지 않는다. 실물 iPhone·Android 연결은 확인되지 않았다. 실물 설치·서명·backup 복원·VoiceOver/TalkBack·배터리·절전·강제 종료·현장 위치는 미수행이다.
 

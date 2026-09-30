@@ -1,0 +1,226 @@
+{
+  "iOS": {
+    "version": "0.2.0",
+    "bundleID": "com.hyetaekpass.app",
+    "ATS": {
+      "NSAllowsArbitraryLoads": false
+    },
+    "locationWhenInUse": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+    "AlwaysLocationKeys": [],
+    "FaceID": null,
+    "Motion": null,
+    "backgroundModes": [
+      "fetch"
+    ],
+    "tracking": false,
+    "collectedData": [],
+    "accessedAPITypes": [
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryFileTimestamp",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "C617.1"
+        ]
+      },
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "CA92.1"
+        ]
+      },
+      {
+        "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategorySystemBootTime",
+        "NSPrivacyAccessedAPITypeReasons": [
+          "35F9.1"
+        ]
+      }
+    ],
+    "plugins": [
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "motionUsagePermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#086653"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": false
+          }
+        }
+      ]
+    ],
+    "jsBytes": 4938862,
+    "jsSHA256": "adb5c7f6a1e0de478a6dd0f8cff33887b4ff535ca9b7e3053182c1c575793a5e",
+    "bundleFileBytes": 34339909,
+    "httpsPlaceholderInJS": true,
+    "includesIonicons": true,
+    "ttfAssetCount": 1,
+    "ioniconsAssets": [
+      "assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf"
+    ],
+    "bundleTreeSHA256": "f6d8e66e068489a95510bb2b27448942a4ff09c170a63b4a07a46437726884cd",
+    "bundleTreeHashMethod": "SHA-256 of sorted JSON [relative path, file|symlink, content SHA-256|link target]"
+  },
+  "Android": {
+    "version": "0.2.0",
+    "package": "com.hyetaekpass.app",
+    "cleartext": "false",
+    "allowBackup": "true",
+    "dataExtractionRules": "@xml/secure_store_data_extraction_rules",
+    "fullBackupContent": "@xml/secure_store_backup_rules",
+    "permissions": [
+      "android.permission.ACCESS_COARSE_LOCATION",
+      "android.permission.ACCESS_FINE_LOCATION",
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.INTERNET",
+      "android.permission.POST_NOTIFICATIONS",
+      "android.permission.READ_APP_BADGE",
+      "android.permission.RECEIVE_BOOT_COMPLETED",
+      "android.permission.USE_BIOMETRIC",
+      "android.permission.USE_FINGERPRINT",
+      "android.permission.VIBRATE",
+      "android.permission.WAKE_LOCK",
+      "com.anddoes.launcher.permission.UPDATE_COUNT",
+      "com.google.android.c2dm.permission.RECEIVE",
+      "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
+      "com.htc.launcher.permission.READ_SETTINGS",
+      "com.htc.launcher.permission.UPDATE_SHORTCUT",
+      "com.huawei.android.launcher.permission.CHANGE_BADGE",
+      "com.huawei.android.launcher.permission.READ_SETTINGS",
+      "com.huawei.android.launcher.permission.WRITE_SETTINGS",
+      "com.hyetaekpass.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+      "com.majeur.launcher.permission.UPDATE_BADGE",
+      "com.oppo.launcher.permission.READ_SETTINGS",
+      "com.oppo.launcher.permission.WRITE_SETTINGS",
+      "com.sec.android.provider.badge.permission.READ",
+      "com.sec.android.provider.badge.permission.WRITE",
+      "com.sonyericsson.home.permission.BROADCAST_BADGE",
+      "com.sonymobile.home.permission.PROVIDER_INSERT_BADGE",
+      "me.everything.badger.permission.BADGE_COUNT_READ",
+      "me.everything.badger.permission.BADGE_COUNT_WRITE"
+    ],
+    "plugins": [
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "요청하신 주변 목록의 거리 순서를 단말에서 계산합니다. 위치는 서버에 보내지 않습니다.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "motionUsagePermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#086653"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": false
+          }
+        }
+      ]
+    ],
+    "aabBytes": 22640168,
+    "aabSHA256": "3d995a85f0c7ecf15e85c3b419eacb5cfac0897cc14f506175f2420b916c9e59",
+    "jsBytes": 3882000,
+    "jsSHA256": "1dda49c848e1bc5e86f5b00e265abd782debaed53ee747f843af687ffa55a7a7",
+    "httpsPlaceholderInJS": true,
+    "includesIonicons": true,
+    "ttfAssetCount": 1,
+    "ioniconsAssets": [
+      "base/res/raw/__node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_fonts_ionicons.ttf"
+    ]
+  },
+  "sourceSHA256": {
+    "FE/mobile/App.tsx": "634ce9f6b380af5ea1f7a5ee2ba57779a020fbd397792548df65e2d50eeefa06",
+    "FE/mobile/app.config.ts": "d1b7d52517482df7bf67fa6711b1d0d95e10e861950d97b8aeb7146ee0a8b677",
+    "FE/mobile/index.ts": "6d4f6f08a0c55d715761531244d207db8f5939eef4d9f5ea5b767b60c966977b",
+    "FE/mobile/package.json": "353edb52f563d0fc7b0efdca9caf27825af5541b3b2b32a8a8adbc81c198539b",
+    "FE/mobile/src/MembershipCode.tsx": "4ed136b4fa26f907d3c6f0a105398474d31d75dbe3e0ea52ca98fb04acb49b35",
+    "FE/mobile/src/ServiceUI.tsx": "2a9216ac2746a444274b38b22f6a349a6583e0d7477516e4b1d2baa25b6e3ab3",
+    "FE/mobile/src/membership.ts": "6f6acf201cb67bc7cd7e465d624ee6447c957cb7fc5ffcc11fa054084a7863f5",
+    "FE/mobile/src/model.ts": "24ee676d1d2ac52e2dd49f5331bcecb736b380537783bcbd91c0faf046db8942",
+    "FE/mobile/src/native.ts": "f8d94241671fca6bb44df6de19dd58dcb4e0ac62ef43bd9a80da70c13f6714d0",
+    "FE/mobile/src/protected.ts": "51a9e502385cd02531085431b1bb7469ab98f607c847c9cf06f483e993408998",
+    "FE/mobile/src/runtime-safety.ts": "fc5bf245e54a1373ae6da52294b171656a37fd89bc0ca6069aca628ebc5053f5",
+    "FE/mobile/src/service.ts": "1381d8d486300756520792a833a1b4186e1021aaa8331c6ab7ead1eb0841143d",
+    "FE/mobile/src/serviceTypes.ts": "4267680b79549011e20b01a9b59216b0b531ebfd12f3ea2a14442c6657933f25",
+    "FE/mobile/test/controller.test.ts": "fd194b01159cd635b52bbf7dcd206b0f03c42e8c1828907c08510efdef7b0264",
+    "FE/mobile/test/local.test.ts": "eae489a8a432ef6bbe534ffeed1da87325431949b3ae5a8d30231ccbada5b6f6",
+    "FE/mobile/test/membership.test.ts": "6450cc35fb96aa61b0a8af8e84b1b9ad523baa5dd341c6a5ae2500d6376172e5",
+    "FE/mobile/test/review-regressions.test.ts": "8c6ef87096678be18ea850bd442ee1f87ecd0ba9a05d2beacf46afeda6e055ea",
+    "FE/mobile/test/service.test.ts": "0b8d97c6ab09c8f48790e24f7a617a0c219e58ec526b55a31b625724d8f2232b",
+    "contracts/types.ts": "b7b6dce9fa2b7402a26a1cd6c8f06172683af1da2fa9381e38b032eb04edd2e9",
+    "package-lock.json": "641ab91094141488c5788f6421470319d062c99e5370dc849679d377f0a961e5",
+    "packages/benefit-core/package.json": "6e3194f5057396e6bf0783f53b75956d6f5984980e29af3c5225fe41e0ba43a0",
+    "packages/benefit-core/src/calculate.ts": "be95e1fc2f908dc259eda2ee490a9f624544231ac1340688d046b1570f164a35",
+    "packages/benefit-core/src/catalog.ts": "9591efd9249638782bbcce5e6f4bd45a18a5b96c8ef02f830dcc5710acc559d1",
+    "packages/benefit-core/src/index.ts": "dec1fc34f729b608419b1f547714413d4ef88a0a0e389fda792bdab079349646",
+    "packages/benefit-core/src/location.ts": "032760a68f78737c5c132256c92499df9ce3fbe78f434b5bb51fcf0a4c145f2f",
+    "packages/benefit-core/src/sync.ts": "692749fc61beb666706aa96c76531d9882bec4fb4dedceed738d72ab29358cc3",
+    "packages/benefit-core/test/calculate.test.ts": "0ac00bb21ff7e520e8009b10986ebe2540221a399cf195780ea5bcba2b65a46a",
+    "packages/benefit-core/test/fixtures.ts": "55c8badd70e7be1df598930ba3548816cced1df63ee0a42a0801cc35d0c79ca5",
+    "packages/benefit-core/test/location.test.ts": "5398cf29073bc6e820da7d0f9cf0562d19cf601512b76f01894f76c9a928bc64",
+    "packages/benefit-core/test/safety.test.ts": "8d779683d56266a1a49ffe2ed4f92ad203f6271bd3ab7ba82f6aff941b13eb7a",
+    "packages/benefit-core/tsconfig.json": "520da54ba9f82e9f7a96cd77cf045c3a73d7deffd842f29c610dd88fb660f019"
+  },
+  "validationRuntime": {
+    "sourceScope": "Immediately before final default wallet selection and refresh busy exemption changes; not final production source",
+    "iOS": {
+      "installed": true,
+      "launchPID": 82853,
+      "processMaintained": true,
+      "jsErrorPatternCount": 0,
+      "jsBytes": 4938467,
+      "log": "/private/tmp/hyetaekpass-service-ios-runtime.log"
+    },
+    "Android": {
+      "installed": true,
+      "launchPID": 3614,
+      "processMaintained": true,
+      "errorLogBytes": 0,
+      "apkBytes": 32327357,
+      "apkSHA256": "069895ac2e03d67ed2864a70699cdf1f230acd560e5eb2d812ea9536a3462b11",
+      "emulatorStopped": true,
+      "log": "/private/tmp/hyetaekpass-service-android-runtime.log"
+    },
+    "uiPhysicalScanningSigningStore": "Not performed"
+  },
+  "productionBuildLogs": {
+    "iOS": "/private/tmp/hyetaekpass-service-ios-production-final.log",
+    "Android": "/private/tmp/hyetaekpass-service-android-production-final.log"
+  },
+  "verifiedAt": "2026-09-30T21:24:26.419819+09:00"
+}

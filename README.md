@@ -1,8 +1,12 @@
 # 혜택패스 Hyetaekpass
 
-결제 전에 카드·멤버십 조건을 확인하는 iOS·Android 검증판입니다. 로컬 지갑, 수동 혜택 확인, 하나의 TypeScript 예상 계산 엔진, 관리 화면·API·PostgreSQL, 자료 후보 CLI를 구현했습니다. UNKNOWN은 기본 합계에서 제외하며 즉시 할인·지금 결제액·청구 할인을 구분합니다. 사용자 작성 규칙은 미검수 자료로 표시합니다.
+현재 매장에서 내 카드·멤버십 중 확인된 조건에 가장 유리한 방법을 찾고, 먼저 제시할 멤버십 바코드·QR을 여는 iOS·Android 앱입니다. 0.2.0에는 홈·탐색·지갑·저장 4탭, 개인 조건 작성, 3단계 결제 전 확인, 도움말·설정·제보와 관리 업무 화면을 구현했습니다. 계산은 하나의 TypeScript 엔진을 사용하며 UNKNOWN은 기본 합계·순위에서 제외합니다. 즉시 할인·지금 결제액·청구 할인은 분리하고, 직접 작성한 조건은 원문 미검수로 표시합니다.
 
 2026-09-30 기준 **실제 공개 혜택 데이터는 0개이고 공개 위치 기능은 OFF**입니다. 가상 자료와 사용자 입력으로 내부 검증을 진행합니다. 양 OS Debug·내부 validation Release·production 구성 빌드, simulator/emulator 설치·실행, 주요 웹/API 흐름을 확인했습니다. native 화면 과업·실물 기기·운영 서명·자료 권리·실제 사람 원문 검수·법률·AWS·스토어 승인은 미완료입니다. 구현은 `codex/validation-build`에 커밋·푸시했고 [draft PR #1](https://github.com/yutakdv/hyetaekpass/pull/1)에 연결했습니다.
+
+앱에서 지갑 수단을 등록하고 **내 조건 작성 → 이 매장에서 확인 → 조건 확인 → 예상 결과 → 멤버십 코드 보기**로 사용할 수 있습니다. 확인되지 않은 후보가 있으면 전체 최대 할인은 확정하지 않습니다. QR·CODE128·EAN13은 사용자가 멤버십용 정적 코드임을 확인한 값만 단말에서 생성·보관합니다. 동적 코드·잔여 포인트·카드번호·결제용 QR은 지원하지 않으며 공식 앱을 사용합니다. 지갑·코드·금액·위치는 제보에 자동 첨부하지 않습니다.
+
+[서비스 상세 기획](docs/service-experience-spec.md), [화면 설계](docs/service-ui-design.md), [0.2.0 실제 검증 결과](docs/service-verification.md)에 세부 동작과 확인 범위가 있습니다. [결제 전 결과](docs/verification-evidence/service/checkout-result-390.png)와 [멤버십 QR](docs/verification-evidence/service/membership-qr-390.png)은 비개인 시험 입력 화면입니다.
 
 ## 구조와 확인한 환경
 
@@ -69,13 +73,14 @@ cfn-lint infra/aws/stack.json
 
 | 검증 | 확인한 결과·범위 |
 |---|---|
-| TypeScript·관리 빌드 | npm 42/42 검사, typecheck·Vite 관리 빌드 PASS |
+| TypeScript·관리 빌드 | 0.2.0 최종 npm 67/67 검사, typecheck·Vite 관리 빌드·validation web export PASS |
 | AI 후보 CLI | Python 18/18 PASS. 권리/개인정보 경계·가상 자료 격리·근거·수동 경로 검사 |
 | BE | Java 25 10개 검사·실제 Spring/PostgreSQL HTTP 9개 PASS. source Docker·빈 DB migration PASS |
 | 복구 | 실제 dump/restore, journal 쓰기 실패, DB 삭제 trigger 실패의 3개 경로 PASS. replay 전 503·재적용 뒤 삭제/차단 유지 |
-| iOS | Debug·내부 validation Release Simulator 빌드, 설치/launch exit 0. production `iphoneos` unsigned Release 컴파일 PASS. native UI·실물 서명/설치 미확인 |
-| Android | Debug·arm64 내부 validation Release APK 및 production AAB 빌드 PASS. API 37 Google APIs arm64 emulator 설치/실행·프로세스 유지 확인. native UI·실물 설치 미확인 |
+| iOS | 0.2.0 validation Release Simulator 설치·launch·오류 패턴 0건. 최종 source production `iphoneos` unsigned Release 빌드 PASS. validation 실행본은 마지막 기본 수단/수동 refresh 2개 수정 직전 source. native UI·실물 서명/설치 미확인 |
+| Android | 0.2.0 arm64 validation Release APK 설치·실행·오류 로그 0 bytes. 최종 source production AAB 빌드 PASS. validation 실행본은 위 2개 수정 직전 source. native UI·실물 설치 미확인 |
 | 웹 UI·관리 API | 390px 가상 계산·지갑 보존/전체 삭제 후 재실행·USER_INPUT 미검수 표시, 빈 카탈로그 권한/재검수/게시·차단/OFF 유지 rollback·제보 분류/종결/토큰 삭제·최소 audit 26건 확인 |
+| 0.2.0 서비스 화면 | 390px 지갑·정적 QR·개인 조건→UNKNOWN→확인된 12,000원 즉시 1,000/결제 11,000/청구 0→QR 표시·재실행 보존, 320px QR/저장 화면 가로 overflow 없음. 새 UI 제보 접수→수정→관리 분류→삭제→빈 inbox 확인 |
 | AWS 정의 | CloudFormation 35 resources cfn-lint PASS. 실제 AWS 배포·복구·요금은 미수행 |
 
 이는 총괄·담당 에이전트의 실제 실행 인계 결과입니다. production 구성은 `https://api.hyetaekpass.invalid` placeholder로 컴파일한 것으로 실제 운영 API 연결·배포 결과가 아닙니다. iOS는 unsigned, Android AAB는 debug 키 서명의 내부 산출물이며 스토어 키·승인은 없습니다. compiled iOS ATS arbitrary loads OFF·BackgroundModes fetch만, Android merged cleartext OFF·배경 위치/foreground service/외부 저장소/system alert 권한 제외를 확인했습니다. native 화면 과업과 실물 시험은 설치/launch 결과와 별도입니다. 최종 변경 뒤 검사와 Git 결과는 [검증 레저](docs/verification-ledger.md)에 추가합니다. [BE 실행·운영](BE/README.md), [BE 상세 증거](BE/verification.md), [AI 실행 안내](docs/ai-data-workflow.md), [SDK 결정](docs/sdk-decisions.md)을 참고합니다.
@@ -92,4 +97,4 @@ cfn-lint infra/aws/stack.json
 
 [통합 기획서](혜택패스_통합_사업기획서_최종.md), [실현 가능성](docs/00_실현가능성과_착수기준.md), [위치 정책](docs/01_위치알림_정책과_검증.md), [데이터 운영](docs/02_할인데이터_확보와_운영.md), [아키텍처](docs/03_아키텍처_Docker_AWS.md), [개발·비용·출시](docs/04_개발계획_비용_출시운영.md), [법률·개인정보](docs/05_법률개인정보_및_출처.md)가 기준입니다. [개발 Goal](GOAL_PROMPT.md)과 [작업 지침](AGENTS.md)는 위임·안전·완료 조건을 정합니다.
 
-비공개 저장소는 [yutakdv/hyetaekpass](https://github.com/yutakdv/hyetaekpass), 기본 브랜치는 `main`입니다. 기능 작업은 `codex/` 브랜치에서 이 프로젝트 파일만 명시적으로 관리합니다. 검증한 구현 커밋은 `00baab5`이며 [draft PR #1](https://github.com/yutakdv/hyetaekpass/pull/1)에서 변경과 실행 증거를 검토할 수 있습니다. 실행 문서 보완은 같은 기능 브랜치에 기록합니다.
+비공개 저장소는 [yutakdv/hyetaekpass](https://github.com/yutakdv/hyetaekpass), 기본 브랜치는 `main`입니다. 기능 작업은 `codex/` 브랜치에서 이 프로젝트 파일만 명시적으로 관리합니다. 초기 검증판은 `00baab5`와 후속 `faf30de`에 기록했고, 0.2.0 서비스 흐름은 같은 [draft PR #1](https://github.com/yutakdv/hyetaekpass/pull/1)에 추가합니다. 최신 commit과 원격 일치는 Git 이력에서 확인합니다.

@@ -1,11 +1,25 @@
 import {kstMonth, validateCatalog} from '../../../packages/benefit-core/src/index.ts';
 import type {Catalog, Rule, RuleConditions, WalletItem} from '../../../contracts/types.ts';
+import {validateMembershipCode} from './membership.ts';
+export interface PersonalDraft {
+  id:string; title:string; brandId:string; productId:string; channel:string;
+  discountType:'RATE'|'FIXED'|'NOTE'; value:string; cap:string; minimum:string;
+  startsOn:string; endsOn:string; startsAt?:string; endsAt?:string;
+  settlement:'INSTANT'|'BILLING'|'UNKNOWN'; basis:'ORIGINAL'|'PAYABLE'|'ELIGIBLE'|'UNKNOWN'; minimumBasis:'ORIGINAL'|'PAYABLE'|'ELIGIBLE'|'UNKNOWN'; rounding:'FLOOR'|'HALF_UP'|'CEIL'|'UNKNOWN';
+  requiredConditions:string[]; trackRemainingWon:boolean; trackRemainingUses:boolean;
+  usage:string; exclusions:string; sourceUrl:string; updatedAt:string; originalRuleId?:string;
+}
+export interface MembershipCodeData {walletId:string;format:'QR'|'CODE128'|'EAN13';value:string;label:string;updatedAt:string}
+export interface SavedReference {origin:'PUBLIC'|'PERSONAL';id:string;savedAt:string}
+export interface RecentReference {origin:'PUBLIC'|'PERSONAL';id:string;viewedAt:string}
 export interface LocalData {
   wallet: WalletItem[]; rules: Rule[]; ruleWrittenAt:Record<string,string>; ruleSourceUrl:Record<string,string>; conditions: Record<string,RuleConditions>;
   consent: {location:boolean; advertising:boolean; background:boolean; version:string; updatedAt:string};
-  reports: {id:string;deleteToken:string}[];
+  reports: {id:string;deleteToken:string;createdAt?:string;category?:string}[];
+  experience:{onboardingDone:boolean;defaultCard:string|null;defaultMembership:string|null};
+  favorites:SavedReference[];recents:RecentReference[];drafts:PersonalDraft[];codes:MembershipCodeData[];
 }
-export const emptyLocal = ():LocalData=>({wallet:[],rules:[],ruleWrittenAt:{},ruleSourceUrl:{},conditions:{},consent:{location:false,advertising:false,background:false,version:'validation-1',updatedAt:new Date().toISOString()},reports:[]});
+export const emptyLocal = ():LocalData=>({wallet:[],rules:[],ruleWrittenAt:{},ruleSourceUrl:{},conditions:{},consent:{location:false,advertising:false,background:false,version:'validation-1',updatedAt:new Date().toISOString()},reports:[],experience:{onboardingDone:false,defaultCard:null,defaultMembership:null},favorites:[],recents:[],drafts:[],codes:[]});
 export function parseWon(value:string):number|null {
   const cleaned=value.replaceAll(',','').trim();if(!cleaned||cleaned==='모름')return null;
   if(!/^\d+$/.test(cleaned)||!Number.isSafeInteger(Number(cleaned))||Number(cleaned)>1_000_000_000)throw Error('원 단위의 0~1,000,000,000 정수를 입력해 주세요.');return Number(cleaned);
@@ -16,11 +30,22 @@ export function splitProtectedText(text:string):string[]{
   if(chunks.length>128)throw Error('단말 저장 한도를 초과했어요. 사용하지 않는 직접 작성 자료를 정리해 주세요.');return chunks;
 }
 export function normalizeLocal(value:unknown):LocalData {
-  if(!value)return emptyLocal();const data={...emptyLocal(),...value as Partial<LocalData>};
+  if(!value)return emptyLocal();if(typeof value!=='object'||Array.isArray(value))throw Error('단말 자료 형식을 확인할 수 없어요.');const data={...emptyLocal(),...value as Partial<LocalData>};
+  if(!('experience' in value))data.experience.onboardingDone=data.wallet?.length>0||data.rules?.length>0;
   if(!Array.isArray(data.wallet)||data.wallet.length>30||data.wallet.some(w=>!w||typeof w.id!=='string'||!w.id||w.id.length>200||typeof w.name!=='string'||!w.name||w.name.length>100||!['CARD','MEMBERSHIP'].includes(w.kind)||typeof w.tier!=='string'||w.tier.length>100||(w.productVersion!==null&&(typeof w.productVersion!=='string'||w.productVersion.length>100))))throw Error('지갑 저장 형식을 확인할 수 없어요.');
   if(!Array.isArray(data.rules)||data.rules.length>40||data.rules.some(r=>r.origin!=='USER_INPUT')||!data.conditions||typeof data.conditions!=='object'||!Array.isArray(data.reports)||data.reports.length>50||data.reports.some(r=>typeof r.id!=='string'||typeof r.deleteToken!=='string'))throw Error('단말 자료 저장 형식을 확인할 수 없어요.');
   if(!data.consent||['location','advertising','background'].some(k=>typeof data.consent[k as 'location']!=='boolean'))throw Error('동의 저장 형식을 확인할 수 없어요.');
-  if(!data.ruleWrittenAt||!data.ruleSourceUrl||Object.values(data.ruleWrittenAt).some(v=>typeof v!=='string'||!Number.isFinite(Date.parse(v)))||Object.values(data.ruleSourceUrl).some(v=>typeof v!=='string'||v.length>2000))throw Error('직접 작성 메타데이터를 확인할 수 없어요.');validateCatalog(personalCatalog(data,Date.now()));return data;
+  if(!data.ruleWrittenAt||!data.ruleSourceUrl||Object.values(data.ruleWrittenAt).some(v=>typeof v!=='string'||!Number.isFinite(Date.parse(v)))||Object.values(data.ruleSourceUrl).some(v=>typeof v!=='string'||v.length>2000))throw Error('직접 작성 메타데이터를 확인할 수 없어요.');
+  const short=(v:unknown,max=200):v is string=>typeof v==='string'&&v.length<=max;
+  const time=(v:unknown)=>short(v)&&Number.isFinite(Date.parse(v));
+  const refs=(values:unknown,max:number,key:'savedAt'|'viewedAt')=>Array.isArray(values)&&values.length<=max&&values.every(r=>r&&['PUBLIC','PERSONAL'].includes(r.origin)&&short(r.id)&&r.id.length>0&&time(r[key]))&&new Set(values.map(r=>r.origin+':'+r.id)).size===values.length;
+  if(!data.experience||typeof data.experience.onboardingDone!=='boolean'||[data.experience.defaultCard,data.experience.defaultMembership].some(v=>v!==null&&!short(v))||!refs(data.favorites,40,'savedAt')||!refs(data.recents,10,'viewedAt'))throw Error('저장 목록 형식을 확인할 수 없어요.');
+  if(!Array.isArray(data.drafts)||data.drafts.length>40||data.drafts.some(d=>!d||!short(d.id)||!d.id||!short(d.title,100)||!short(d.brandId)||!short(d.productId)||!short(d.channel,100)||!['RATE','FIXED','NOTE'].includes(d.discountType)||['value','cap','minimum','startsOn','endsOn'].some(k=>!short(d[k as 'value'],100))||!['INSTANT','BILLING','UNKNOWN'].includes(d.settlement)||!['ORIGINAL','PAYABLE','ELIGIBLE','UNKNOWN'].includes(d.basis)||!['ORIGINAL','PAYABLE','ELIGIBLE','UNKNOWN'].includes(d.minimumBasis)||!['FLOOR','HALF_UP','CEIL','UNKNOWN'].includes(d.rounding)||!Array.isArray(d.requiredConditions)||d.requiredConditions.length>20||d.requiredConditions.some(k=>!short(k,100))||typeof d.trackRemainingWon!=='boolean'||typeof d.trackRemainingUses!=='boolean'||!short(d.usage,2000)||!short(d.exclusions,2000)||!short(d.sourceUrl,2000)||!time(d.updatedAt)||(d.startsAt!==undefined&&!time(d.startsAt))||(d.endsAt!==undefined&&!time(d.endsAt))))throw Error('작성 중인 조건 형식을 확인할 수 없어요.');
+  if(!Array.isArray(data.codes)||data.codes.length>30||new Set(data.codes.map(c=>c.walletId)).size!==data.codes.length||data.codes.some(c=>!c||!short(c.walletId)||!data.wallet.some(w=>w.id===c.walletId&&w.kind==='MEMBERSHIP')||!['QR','CODE128','EAN13'].includes(c.format)||!short(c.value,512)||!c.value||new TextEncoder().encode(c.value).length>512||!short(c.label,100)||!time(c.updatedAt)))throw Error('멤버십 코드 저장 형식을 확인할 수 없어요.');
+  for(const code of data.codes)validateMembershipCode('MEMBERSHIP',code.format,code.value);
+  if(data.experience.defaultCard!==null&&!data.wallet.some(w=>w.id===data.experience.defaultCard&&w.kind==='CARD')||data.experience.defaultMembership!==null&&!data.wallet.some(w=>w.id===data.experience.defaultMembership&&w.kind==='MEMBERSHIP'))throw Error('기본 보유 수단의 연결을 확인해 주세요.');
+  if(new Set(data.drafts.map(d=>d.id)).size!==data.drafts.length||data.drafts.some(d=>(d.originalRuleId!==undefined&&!short(d.originalRuleId))||!data.wallet.some(w=>w.id===d.productId)))throw Error('작성 중인 조건의 연결을 확인해 주세요.');
+  validateCatalog(personalCatalog(data,Date.now()));return data;
 }
 export function personalCatalog(data:LocalData,now:number):Catalog {
   return {schemaVersion:1,semanticsVersion:1,releaseId:'personal-local',createdAt:new Date(now).toISOString(),brands:[...new Set(data.rules.map(r=>r.brandId))].map(id=>({id,name:id})),products:data.wallet.map(w=>({id:w.id,name:w.name,kind:w.kind})),sources:[{id:'personal',url:'https://hyetaekpass.invalid/user-input',documentVersion:'사용자 직접 작성 · 미검수',checkedAt:new Date(now).toISOString(),freshUntil:'2099-01-01T00:00:00Z',rightsUntil:'2099-01-01T00:00:00Z',rights:{display:false,transform:false,iosDistribution:false,androidDistribution:false,offlineCache:false,update:false,revoke:false,evidenceRef:'local-user-input-only'}}],places:[],rules:data.rules,combinations:[]};
@@ -35,7 +60,8 @@ export function updateWallet(data:LocalData,item:WalletItem|null,productId:strin
   const old=data.wallet.find(w=>w.id===productId);const changed=!item||!old||old.tier!==item.tier||old.productVersion!==item.productVersion||old.kind!==item.kind;
   const affected=new Set([...data.rules,...publicRules].filter(r=>r.productId===productId).map(r=>r.id));
   const removed=new Set(item?[]:data.rules.filter(r=>r.productId===productId).map(r=>r.id));
-  return {...data,wallet:[...data.wallet.filter(w=>w.id!==productId),...(item?[item]:[])],rules:data.rules.filter(r=>!removed.has(r.id)),ruleWrittenAt:Object.fromEntries(Object.entries(data.ruleWrittenAt).filter(([rid])=>!removed.has(rid))),ruleSourceUrl:Object.fromEntries(Object.entries(data.ruleSourceUrl).filter(([rid])=>!removed.has(rid))),conditions:changed?Object.fromEntries(Object.entries(data.conditions).filter(([rid])=>!affected.has(rid))):data.conditions};
+  const index=data.wallet.findIndex(w=>w.id===productId);const wallet=item?(index<0?[...data.wallet,item]:data.wallet.map(w=>w.id===productId?item:w)):data.wallet.filter(w=>w.id!==productId);
+  return {...data,wallet,rules:data.rules.filter(r=>!removed.has(r.id)),drafts:data.drafts.filter(d=>item||d.productId!==productId),codes:data.codes.filter(c=>c.walletId!==productId||(item&&item.kind==='MEMBERSHIP')),favorites:data.favorites.filter(r=>r.origin!=='PERSONAL'||!removed.has(r.id)),recents:data.recents.filter(r=>r.origin!=='PERSONAL'||!removed.has(r.id)),experience:{...data.experience,defaultCard:item?.kind==='CARD'||data.experience.defaultCard!==productId?data.experience.defaultCard:null,defaultMembership:item?.kind==='MEMBERSHIP'||data.experience.defaultMembership!==productId?data.experience.defaultMembership:null},ruleWrittenAt:Object.fromEntries(Object.entries(data.ruleWrittenAt).filter(([rid])=>!removed.has(rid))),ruleSourceUrl:Object.fromEntries(Object.entries(data.ruleSourceUrl).filter(([rid])=>!removed.has(rid))),conditions:changed?Object.fromEntries(Object.entries(data.conditions).filter(([rid])=>!affected.has(rid))):data.conditions};
 }
 export type ReportReceipt = LocalData['reports'][number];
 export async function clearDeviceBeforeRemoteReport(receipt:ReportReceipt|null,pause:()=>void,clear:()=>Promise<void>,remove:(receipt:ReportReceipt)=>Promise<void>,pending:(receipt:ReportReceipt|null)=>void):Promise<boolean>{
