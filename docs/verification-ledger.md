@@ -74,7 +74,7 @@ AI 에이전트의 코드 리뷰와 자동 검사는 실제 사람의 원문 검
 | R29 | AWS HTTPS·SG/DB·비밀/OIDC·digest·비용·복구·대리/사고 | BE·사업 책임자 / `infra/aws/stack.json` | 35 resources 정의 구현 | AWS-STATIC-01 cfn-lint 통과 인계 | AWS 미배포. 계정/예산/인증·S3/PITR·요금·운영 외부 대기 |
 | R30 | 실제 주체의 위치/광고/개인정보/국외처리·기록/동의/신고 | 사업 책임자·외부 자문 | 흐름·외부 질문 준비 | 기획/정책 문서 준비만 확인 | 실제 사업·법률 적용·회신·신고·동의 외부 대기 |
 | R31 | 양 스토어 준비·계정별 시험·바이너리/개인정보 일치·실제 승인 | 사업 책임자·FE·PM | 제출 준비 기준 문서 존재 | 제출/승인 증거 없음 | production 컴파일 확인. 계정·운영 서명·실물 시험·승인 외부 대기 |
-| R32 | 검증된 실행/운영 안내·diff/비밀 점검·commit/push·연결 PR | 총괄·PM / README·Git | README를 실제 실행/환경/결과/외부 조건으로 갱신 | PM-DOC-03·FINAL-CHECK-01, 구현 105 files commit `00baab5` 인계 | README/레저 최종 commit·push/PR 미완료. main 임의 병합 없음 |
+| R32 | 검증된 실행/운영 안내·diff/비밀 점검·commit/push·연결 PR | 총괄·PM / README·Git | README를 실제 실행/환경/결과/외부 조건으로 갱신 | PM-DOC-03·FINAL-CHECK-01, 구현 105 files commit `00baab5` 인계 | README/레저 후속 commit `f20a62f`와 구현을 같은 기능 브랜치에 push, draft PR #1 현재 채팅 연결 확인 |
 
 ## 외부 준비 묶음
 
